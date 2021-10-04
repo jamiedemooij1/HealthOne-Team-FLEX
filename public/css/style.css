@@ -7,6 +7,12 @@ a {
 body {
     background-color: #dacccc;
 }
+.breadcrumb-item {
+    padding-left: 0.5vw;
+}
+.card {
+    margin-left: 1vw;
+}
 .flex-column {
     float: left;
     width: 45%;
@@ -49,7 +55,8 @@ main {
 }
 
 .product-img {
-    width: 70%;
+    width: 50%;
+    height: 30vh;
 }
 .pull-right img-thumbnail {
     margin-top: -10px;
