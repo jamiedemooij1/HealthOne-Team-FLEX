@@ -7,13 +7,23 @@ a {
 body {
     background-color: #ffd1d1;
 }
-
+.flex-column {
+    float: left;
+    width: 40%;
+    padding-left: 5%;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
 .container {
     background-color: white;
 
 }
+
 .header-row {
     margin-top: 20px
+}
+main {
+    width: 600px;
+    padding-left: 50px;
 }
 .navbar {
     margin-bottom: 0;
@@ -27,4 +37,9 @@ body {
 .pull-right img-thumbnail {
     margin-top: -10px;
     margin-bottom: 10px
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
