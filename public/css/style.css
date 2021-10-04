@@ -13,8 +13,8 @@ body {
     padding-left: 5%;
     height: 300px; /* Should be removed. Only for demonstration */
 }
-.container {
-    background-color: white;
+.container-fluid {
+    padding-left: 0px;
 }
 .header-row {
     margin-top: 20px
@@ -23,12 +23,17 @@ main {
     width: 600px;
     padding-left: 50px;
 }
-.navbar {
-    margin-bottom: 0;
-}
+
 .nav-link {
     color: black;
 }
+.navbar {
+    margin-bottom: 0;
+    width: 100vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
 .product-img {
     width: 70%;
 }
