@@ -1,7 +1,7 @@
 <footer>
     <p class="footer-links">Social media</p>
     <h3>Service & Info</h3>
-    <a href="contact.php">Openingstijden</a><<br>
+    <a href="contact.php">Openingstijden</a><br>
     <a href="contact.php">Klantenervaringen</a><br>
     <a href="home.php">Blog</a><br>
 

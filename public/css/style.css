@@ -35,10 +35,11 @@ footer h3, a {
 }
 .header-row {
     margin-top: 20px
-}
-hr {
-    width: 80vw;
-}
+}/*
+.img-fluid {
+    width: 60vw;
+    height: 40vh;
+}*/
 main {
     width: 600px;
     padding-left: 50px;
