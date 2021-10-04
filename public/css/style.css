@@ -1,7 +1,9 @@
 body {
     background-color: gainsboro
 }
-
+a {
+    color: black;
+}
 .container {
     background-color: white;
 }
@@ -22,7 +24,9 @@ body {
 .navbar {
     margin-bottom: 0;
 }
-
+.nav-link {
+    color: black;
+}
 .product-img {
     width: 70%;
 }
