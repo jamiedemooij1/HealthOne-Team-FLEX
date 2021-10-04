@@ -32,12 +32,6 @@
                         <hr>
                     </div>
                 </div>
-
-
-
-
-
-
                 <?php
                 include_once ('defaults/footer.php');
                 ?>

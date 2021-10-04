@@ -16,6 +16,17 @@ body {
 .container-fluid {
     padding-left: 0px;
 }
+footer h3, a {
+    padding-left: 1vw;
+}
+.footer-links {
+    font-size: 25px;
+    width: 100vw;
+    height: 7vh;
+    background-color: #d9534f;
+    text-align: center;
+    font-weight: bold;
+}
 .header-row {
     margin-top: 20px
 }
