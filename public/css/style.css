@@ -30,6 +30,9 @@ footer h3, a {
 .header-row {
     margin-top: 20px
 }
+hr {
+    width: 80vw;
+}
 main {
     width: 600px;
     padding-left: 50px;
@@ -52,6 +55,7 @@ main {
     margin-top: -10px;
     margin-bottom: 10px
 }
+
 .row:after {
     content: "";
     display: table;
