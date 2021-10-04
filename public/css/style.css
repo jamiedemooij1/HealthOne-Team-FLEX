@@ -9,15 +9,13 @@ body {
 }
 .flex-column {
     float: left;
-    width: 40%;
+    width: 45%;
     padding-left: 5%;
     height: 300px; /* Should be removed. Only for demonstration */
 }
 .container {
     background-color: white;
-
 }
-
 .header-row {
     margin-top: 20px
 }

@@ -8,15 +8,11 @@
     ?>
     <body>
         <div class="container-fluid">
-
                 <?php
                 include_once ('defaults/header.php');
+                include_once ('defaults/menu.php');
+                include_once ('defaults/pictures.php');
                 ?>
-
-            <?php
-            include_once ('defaults/menu.php');
-            include_once ('defaults/pictures.php');
-            ?>
                 <div class="row">
                     <div class="flex-column">
                         <h4>Sportcenter HealthOne</h4>
@@ -27,6 +23,13 @@
                     </div>
                     <div class="flex-column">
                         <h4>Nieuwsoverzicht</h4>
+                        Hier is het nieuws overzicht over wat er op en rond de sportschool HealthOne gebeurd:
+                        <ul>
+                            <li>De website wordt geüpdate</li>
+                            <li>In december komen er groepstrainingen</li>
+                            <li>Linda Houwer start vanaf 11 oktober als trainer</li>
+                        </ul>
+                        <hr>
                     </div>
                 </div>
 
