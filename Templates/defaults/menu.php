@@ -17,13 +17,13 @@
                     <a class="nav-link" href="/categories">sportapparaat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="#">registreren</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">contact</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link"  href="#">registreren</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">inloggen</a>
                 </li>
