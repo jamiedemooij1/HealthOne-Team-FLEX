@@ -1,26 +1,20 @@
-body {
-    background-color: gainsboro
-}
 a {
     color: black;
 }
-.container {
-    background-color: white;
-}
-
-.pull-right img-thumbnail {
-    margin-top: -10px;
-    margin-bottom: 10px
-}
-
-.header-row {
-    margin-top: 20px
-}
-
 .banner-img {
     margin-bottom: 20px;
 }
+body {
+    background-color: #ffd1d1;
+}
 
+.container {
+    background-color: white;
+
+}
+.header-row {
+    margin-top: 20px
+}
 .navbar {
     margin-bottom: 0;
 }
@@ -29,4 +23,8 @@ a {
 }
 .product-img {
     width: 70%;
+}
+.pull-right img-thumbnail {
+    margin-top: -10px;
+    margin-bottom: 10px
 }
