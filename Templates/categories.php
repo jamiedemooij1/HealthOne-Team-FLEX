@@ -24,15 +24,15 @@ include_once('defaults/head.php');
             global $categories;
             foreach ($categories as &$data) {
             echo "<div class='col-sm-4 col-md-3'>
-                <div class='card'>
-                    <div class='card-body'>
-                        <a>
-                            <img class='product-img img-responsive center-block' src='". $data->Picture . "'>
-                        </a>
-                        <div class='card-title mb-3'>" . $data->Name . "</div>
+                    <div class='card'>
+                        <div class='card-body'>
+                            <a>
+                                <img class='product-img img-responsive center-block' src='". $data->Picture . "'>
+                            </a>
+                            <div class='card-title mb-3'>" . $data->Name . "</div>
+                        </div>
                     </div>
-                </div>
-            </div>";
+                </div>";
             }
 
 
