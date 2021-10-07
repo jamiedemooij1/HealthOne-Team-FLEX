@@ -5,7 +5,7 @@ include_once('defaults/head.php');
 ?>
 
 <body>
-
+S
 <div class="container-fluid">
     <?php
     include_once('defaults/header.php');
@@ -19,9 +19,12 @@ include_once('defaults/head.php');
     </nav>
     <div class="row gy-3 ">
         <?php
-        global $productpage;
-        foreach ($productpage as &$data) {
-            echo "";
+        global $getproducts;
+        foreach ($getproducts as &$data) {
+            echo "<h4>" . $data->Name .  "</h4>
+                  <p> " . $data->Description . "</p>
+            
+            ";
         }
         ?>
     </div>

@@ -25,7 +25,7 @@ switch ($params[1]) {
                     saveReview($_POST['name'],$_POST['review']);
                     $reviews=getReviews($productId);
                 }
-                $productpage = getProduct();
+                $productpage = getProduct($productId);
                 include_once "../Templates/product.php";
                 // TODO Zorg dat je hier de product pagina laat zien
             } else {
