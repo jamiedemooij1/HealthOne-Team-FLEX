@@ -16,7 +16,10 @@
                         <p>Wilt u graag eens langskomen om te komen voor een proefles of wilt u graag een coachinggesprek? <br> 
                         Kom langs op onze locatie </p>
                     <?php 
-                    global $contact;
+                    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+                    $query = $db->prepare("SELECT * FROM locatie");
+                    $query->execute();
+                    $result = $query->fetchAll(PDO::FETCH_CLASS);
                     echo "<p> " . $data->name . "</p>
                          <p> " . $data->adres . "</p>
                          <p> " . $data->postcode . "</p>

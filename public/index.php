@@ -1,6 +1,7 @@
 <?php
 require '../Modules/Categories.php';
 require '../Modules/Products.php';
+require '../Modules/Contact.php';
 // require '../Modules/Database.php';
 
 $request = $_SERVER['REQUEST_URI'];
@@ -41,7 +42,16 @@ switch ($params[1]) {
         break;
     case 'contact':
         $titleSuffix = ' | Contact';
+        $contact = getContact();
         include_once "../Templates/contact.php";
+        break;
+    case 'inloggen':
+        $titleSuffix = ' | Inloggen';
+        include_once "../Templates/inloggen.php";
+        break;
+    case 'registreren':
+        $titleSuffix = ' | Registreren';
+        include_once "../Templates/registreren.php";
         break;
     default:
         $titleSuffix = ' | Home';
