@@ -17,13 +17,13 @@ S
             <li class="breadcrumb-item"><a href="/product">Product</a></li>
         </ol>
     </nav>
-    <div class="row gy-3 ">
+    <div class="row gy-3 product-information">
         <?php
         global $getproducts;
         foreach ($getproducts as &$data) {
             echo "<h4>" . $data->Name .  "</h4>
                   <p> " . $data->Description . "</p>
-            
+                <img src='" . $data->Picture . "' class = 'product'>
             ";
         }
         ?>

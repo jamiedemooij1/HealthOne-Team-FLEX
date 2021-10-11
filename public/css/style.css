@@ -63,10 +63,15 @@ main {
     padding-right: 1vw;
     padding-left: 0.5vw;
 }
-
+.product {
+    width: 40vw;
+}
 .product-img {
     width: 50%;
     height: 30vh;
+}
+.product-information {
+    padding-left: 3vw;
 }
 .pull-right img-thumbnail {
     margin-top: -10px;

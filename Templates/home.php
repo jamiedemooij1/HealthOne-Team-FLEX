@@ -5,7 +5,7 @@
     include_once('defaults/head.php');
     ?>
     <body>
-        <div class="container-flu   id">
+        <div class="container-fluid">
                 <?php
                 include_once ('defaults/header.php');
                 include_once ('defaults/menu.php');

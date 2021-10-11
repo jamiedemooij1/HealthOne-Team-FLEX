@@ -39,6 +39,10 @@ switch ($params[1]) {
             include_once "../Templates/categories.php";
         }
         break;
+    case 'contact':
+        $titleSuffix = ' | Contact';
+        include_once "../Templates/contact.php";
+        break;
     default:
         $titleSuffix = ' | Home';
         include_once "../Templates/home.php";
