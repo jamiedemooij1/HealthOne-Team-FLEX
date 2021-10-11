@@ -56,6 +56,7 @@ switch ($params[1]) {
     default:
         $titleSuffix = ' | Home';
         include_once "../Templates/home.php";
+        break;
 }
 
 function getTitle() {

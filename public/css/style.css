@@ -19,12 +19,17 @@ body {
     text-align: center;
     width: 21vw;
 }
+.contact-page {
+    height: 68vh;
+    padding-top: 1vw;
+}
 .display-2 {
     padding-right: 0px;
 }
 .flex-column {
     float: left;
     width: 45%;
+    height: 200px;
     padding-left: 5%;
     height: 300px; /* Should be removed. Only for demonstration */
 }
@@ -48,6 +53,9 @@ footer h3, a {
 }
 .img-fluid {
     width: 100vw;
+}
+.img-groundplan {
+    height: 60vh;
 }
 main {
     width: 600px;
