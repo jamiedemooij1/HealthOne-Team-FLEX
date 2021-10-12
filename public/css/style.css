@@ -72,10 +72,15 @@ main {
     padding-left: 0.5vw;
 }
 .product {
-    width: 40vw;
+    width: 40vw;    
+}
+/* De hometrainer pagina moet deze styling toegevoegd krijgen in de afbeelding, gezien deze afbeeldingstand anders is */
+.hometrainer {
+    width: 25vw;
+    height: 60vh;
 }
 .product-img {
-    width: 50%;
+    width: 75%;
     height: 30vh;
 }
 .product-information {

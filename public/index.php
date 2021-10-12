@@ -40,22 +40,23 @@ switch ($params[1]) {
             include_once "../Templates/categories.php";
         }
         break;
-    case 'contact':
-        $titleSuffix = ' | Contact';
-        $contact = getContact();
-        include_once '../Templates/contact.php';
-        break;
     case 'inloggen':
         $titleSuffix = ' | Inloggen';
-        include_once '../Templates/inloggen.php';
+        include_once "../Templates/inloggen.php";
         break;
     case 'registreren':
         $titleSuffix = ' | Registreren';
-        include_once '../Templates/registreren.php';
+        include_once "../Templates/registreren.php";
         break;
+    case 'contact':
+        $titleSuffix = ' | Contact';
+        $contact = getContact();
+        include_once "../Templates/contact.php";
+        break;
+    
     default:
         $titleSuffix = ' | Home';
-        include_once '../Templates/home.php';
+        include_once "../Templates/home.php";
 
 }
 
