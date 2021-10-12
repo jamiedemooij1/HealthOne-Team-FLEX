@@ -43,23 +43,24 @@ switch ($params[1]) {
     case 'contact':
         $titleSuffix = ' | Contact';
         $contact = getContact();
-        include_once "../Templates/contact.php";
+        include_once '../Templates/contact.php';
         break;
     case 'inloggen':
         $titleSuffix = ' | Inloggen';
-        include_once "../Templates/inloggen.php";
+        include_once '../Templates/inloggen.php';
         break;
     case 'registreren':
         $titleSuffix = ' | Registreren';
-        include_once "../Templates/registreren.php";
+        include_once '../Templates/registreren.php';
         break;
     default:
         $titleSuffix = ' | Home';
-        include_once "../Templates/home.php";
-        break;
+        include_once '../Templates/home.php';
+
 }
 
 function getTitle() {
     global $title, $titleSuffix;
     return $title . $titleSuffix;
 }
+?>
