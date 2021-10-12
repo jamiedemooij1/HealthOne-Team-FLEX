@@ -4,7 +4,7 @@
 function getCategories()
 {
         $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-        $query = $db->prepare("SELECT * FROM product");
+        $query = $db->prepare("SELECT * FROM category");
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_CLASS);
         return $result;
