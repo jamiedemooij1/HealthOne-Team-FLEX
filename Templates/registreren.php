@@ -34,6 +34,7 @@
                     <input type="submit" name="Registreren" class="button" value="Registreren">
                     </div>
                     <br>
+                    
                     <hr>
                 </div>
                 <?php
