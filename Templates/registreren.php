@@ -10,30 +10,25 @@
                 include_once ('defaults/header.php');
                 include_once ('defaults/menu.php');
                 ?>
-                <div class="row">
-                    <div class="flex-column">
+                <div class="row registratie">
+                    <div class="">
                         <h3>Registreren bij HealthOne</h3>
                        
                     <?php 
-                    echo "Hallo";
+                    //echo "Hallo";
                     ?>
-                    <label for="">Gebruikersnaam*</label>
-                    <input type="text">
-
-                    <label for="">Voornaam*</label>
-                    <input type="text">
-
-                    <label for="">Achternaam*</label>
-                    <input type="text">
-
-                    <label for="">Emailadres*</label>
-                    <input type="text">
-
-                    <label for="">Wachtwoord*</label>
-                    <input type="text">
+                    <label for="" class="labels">Gebruikersnaam*</label><label for="" class="labels">Wachtwoord*</label><br>
+                    <input type="text" class="inputvelden"><input type="text" class="inputvelden"><br>
+                    <br>
+                    <label for="" class="labels">Voornaam*</label><label for="" class="labels">Achternaam*</label><br>
+                    <input type="text" class="inputvelden"><input type="text" class="inputvelden"><br>
+                    <br>
+                    <label for="" class="labels">Telefoonnummer</label><label for="" class="labels">Geslacht</label><br>
+                    <input type="text" class="inputvelden"><input type="text" class="inputvelden"><br>
+                    <br>
+                    <label for="">Emailadres*</label><br>
+                    <input type="text" class="email"><br>
                     
-                    <label for="">Telefoonnummer*</label>
-                    <input type="text">
                     </div>
                     <hr>
                 </div>
