@@ -14,6 +14,11 @@ body {
 .breadcrumb-item {
     padding-left: 0.5vw;
 }
+.button {
+    margin-right: 3vw;
+    padding-right: 4vw; 
+    padding-left: 4vw;
+}
 .card {
     margin-left: 1.3vw;
     text-align: center;
@@ -27,7 +32,11 @@ body {
     padding-right: 0px;
 }
 .email {
-    width: 25%;
+    width: 430px;
+    margin-right: 3vw;
+}
+.emailadres {
+    padding-right: 2vw;
 }
 .flex-column {
     float: left;
@@ -63,9 +72,6 @@ footer h3, a {
 .inputvelden {
     margin-right: 3vw;
 }
-.labels {
-    padding-right: 5vw;
-}
 main {
     width: 600px;
     padding-left: 50px;
@@ -100,11 +106,17 @@ main {
     margin-bottom: 10px
 }
 .registratie {
-    height: 60vh;
+    height: 44vh;
     text-align: center;
+}
+.registratie-heading {
+    padding-top: 1vw;
+    padding-right: 2vw;
+    padding-bottom: 1vw;
 }
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
+

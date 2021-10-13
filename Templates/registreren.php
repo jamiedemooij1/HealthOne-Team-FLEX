@@ -12,24 +12,28 @@
                 ?>
                 <div class="row registratie">
                     <div class="">
-                        <h3>Registreren bij HealthOne</h3>
+                        <h3 class="registratie-heading">Registreren bij HealthOne</h3>
                        
                     <?php 
                     //echo "Hallo";
                     ?>
-                    <label for="" class="labels">Gebruikersnaam*</label><label for="" class="labels">Wachtwoord*</label><br>
-                    <input type="text" class="inputvelden"><input type="text" class="inputvelden"><br>
-                    <br>
-                    <label for="" class="labels">Voornaam*</label><label for="" class="labels">Achternaam*</label><br>
-                    <input type="text" class="inputvelden"><input type="text" class="inputvelden"><br>
-                    <br>
-                    <label for="" class="labels">Telefoonnummer</label><label for="" class="labels">Geslacht</label><br>
-                    <input type="text" class="inputvelden"><input type="text" class="inputvelden"><br>
-                    <br>
-                    <label for="">Emailadres*</label><br>
-                    <input type="text" class="email"><br>
+                   
+                        <input type="text" class="inputvelden" placeholder="Gebruikersnaam*">
+                        <input type="text" class="inputvelden" placeholder="Wachtwoord*"><br>
+                        <br>
                     
+                        <input type="text" class="inputvelden" placeholder="Voornaam*">
+                        <input type="text" class="inputvelden" placeholder="Achternaam*"><br>
+                        <br>
+                    
+                        <input type="text" class="inputvelden" placeholder="Telefoonnummer">
+                        <input type="text" class="inputvelden" placeholder="Geslacht"><br>
+                        <br>
+                    <input type="text" class="email" placeholder="Emailadres"><br>
+                    <br>
+                    <input type="submit" name="Registreren" class="button" value="Registreren">
                     </div>
+                    <br>
                     <hr>
                 </div>
                 <?php
