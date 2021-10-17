@@ -4,6 +4,7 @@
 a {
     color: black;
 }
+
 .banner-img {
     margin-bottom: 20px;
 }
@@ -23,6 +24,9 @@ body {
     margin-left: 1.3vw;
     text-align: center;
     width: 21vw;
+}
+.column {
+    width: 33%;
 }
 .contact-page {
     height: 68vh;
@@ -63,11 +67,17 @@ footer h3, a {
 .header-row {
     margin-top: 20px
 }
+.img-account {
+    width: 10vw;
+}
 .img-fluid {
     width: 100vw;
 }
 .img-groundplan {
     height: 60vh;
+}
+.inlogblok {
+    text-align: center;
 }
 .inputvelden {
     margin-right: 3vw;

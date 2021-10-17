@@ -10,30 +10,52 @@
                 include_once ('defaults/header.php');
                 include_once ('defaults/menu.php');
                 ?>
-                <div class="row">
-                    <div class="flex-column">
-                        <h4>Contact HealthOne</h4>
-                        <p>Wilt u graag eens langskomen om te komen voor een proefles of wilt u graag een coachinggesprek? <br> 
-                        Kom langs op onze locatie </p>
-                    <?php 
-                    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-                    $query = $db->prepare("SELECT * FROM locatie");
-                    $query->execute();
-                    $result = $query->fetchAll(PDO::FETCH_CLASS);
-                    echo "<p> " . $data->name . "</p>
-                         <p> " . $data->adres . "</p>
-                         <p> " . $data->postcode . "</p>
-                         <p> " . $data->place . "</p>
-                         <p> " . $data->phone . "</p>";
-                    ?>
-
-                    </div>
-                    <div class="flex-column">
+                <?php 
+                        try {
+                            $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+                            if (isset($_POST['Inloggen'])) {
+                                $gebruikersnaam = filter_input(INPUT_POST, "gebruikersnaam", FILTER_SANITIZE_STRING);
+                                $wachtwoord = $_POST['wachtwoord'];
+                                $query = $db->prepare("SELECT * FROM customer WHERE gebruikersnaam = :gebruikersnaam");
+                                $query->bindParam("gebruikersnaam", $gebruikersnaam);
+                                $query->execute();
+                                if ($query->rowCount() == 1) {
+                                    $result = $query->fetch(PDO::FETCH_ASSOC);
+                                    if (password_verify($wachtwoord, $result["wachtwoord"])) {
+                                        echo "Juiste gegevens!";
+                                    } else {
+                                        echo "Onjuiste gegevens!";
+                                    }
+                                } else {
+                                    echo "Onjuiste gegevens!";
+                                }
+                                echo "<br>";
+                                }
+                            }
                         
+                        catch (PDOException $e) {
+                            die("Error!: " . $e->getMessage());
+                        }
+                    ?>
+                <div class="row">
+                        <article class="inlogblok">
+                            <h4>Inloggen HealthOne</h4>
+                            <label for="">Gebruikersnaam</label><br>
+                            <input type="text" name="gebruikersnaam" id="">
+                            <br>
+                            <label for="">Wachtwoord</label><br>
+                            <input type="password" name="wachtwoord" id=""><br><br>
+                            <a href="account">
+                                <input type="submit" value="Inloggen" ac>
+                            </a>
+                                
+                        </article>
+                    
 
                     </div>
+                    
                     <hr>
-                </div>
+                
                 <?php
                 include_once ('defaults/footer.php');
                 ?>
