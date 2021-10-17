@@ -42,6 +42,9 @@ body {
 .emailadres {
     padding-right: 2vw;
 }
+.first-col {
+    padding-left: 2vw;
+}
 .flex-column {
     float: left;
     width: 45%;

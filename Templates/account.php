@@ -12,18 +12,21 @@
                 include_once ('defaults/pictures.php');
                 ?>
                 <div class="row">
-                    <div class="column">
+                    <div class="column first-col">
 
-                        <h4>Favorieten</h4>
+                        <h4>Favorieten</h4><br>
                         <h5>Roeiapparaat</h5>
                         <figure>
                             <img class="img-account" src="https://www.fitgear.nl/2391-thickbox_default/roeiapparaat-dunlop-air-750-roeitrainer.jpg" />
                         </figure>
-                        
-
                         <h5>Loopband</h5>
-                        
-                        
+                        <figure>
+                            <img class="img-account" src="https://cdn.webshopapp.com/shops/281654/files/282878592/loopband-fitrun-50i.jpg" />
+                        </figure>
+                        <h5>..</h5>
+                        <figure>
+                            <img class="img-account" src="" />
+                        </figure>
 
                     </div>
                     <div class="column">
