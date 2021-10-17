@@ -19,25 +19,25 @@ include_once('defaults/head.php');
     </nav>
     <div class="row gy-3 product-information">
         <?php
-        global $getproducts;
-        global $number;
-        foreach ($getproducts as &$data) {
-            echo "<h4>" . $data->Name .  "</h4>
-                  <p> " . $data->Description . "</p>
-                  <a href='products'" . $number . "'>
-                <img src='" . $data->Picture . "' class = 'product'>
-                </a>
-            ";
+        global $product;
+        var_dump($product);
+        foreach ($product as &$data) {
+            echo "<div class='col-sm-4 col-md-3'>
+                    <div class='card'>
+                        <div class='card-body'>
+                        <img class='product-img img-responsive center-block' src='". $data->Picture . "'>
+                            <div class='card-title mb-3'>" . $data->Name . "</div>
+                        </div>
+                    </div>
+                </div>";
         }
         ?>
     </div>
     <hr>
     <?php
     include_once('defaults/footer.php');
-
     ?>
 </div>
 
 </body>
 </html>
-
