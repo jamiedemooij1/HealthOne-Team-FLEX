@@ -12,11 +12,15 @@ function getProducts(int $categoryId)
     return $result;
 }
 
-function getProduct(int $productId)
+function getProductInformation(int $productId)
 {
+    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $parts = explode('/', $url);
+    $number = $parts[count($parts) - 1];
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-    $query = $db->prepare("SELECT * FROM product");
+    $query = $db->prepare("SELECT * FROM product WHERE ID =$number");
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_CLASS);
     return $result;
 }
+
