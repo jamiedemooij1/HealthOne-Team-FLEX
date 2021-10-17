@@ -30,6 +30,11 @@ switch ($params[1]) {
                 $productpage = getProduct($productId);
                 include_once "../Templates/product.php";
                 // TODO Zorg dat je hier de product pagina laat zien
+                /*
+                Hier ben ik een poging te doen om binnen de producten de products toe te voegen dat de indivuele pagina komt
+                if (isset($_GET['product_id' . 'products'])) {
+                    include_once "../Templates/products.php";
+                }*/
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
                 $getproducts = getProducts($categoryId);
