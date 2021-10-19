@@ -19,7 +19,8 @@
                         $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
                         if (isset($_POST['Registreren'])) {
                             $gebruikersnaam = filter_input(INPUT_POST, "gebruikersnaam", FILTER_SANITIZE_STRING);
-                            $wachtwoord = filter_input(INPUT_POST, "wachtwoord", FILTER_SANITIZE_STRING);
+                            $wachtwoord = password_hash(PASSWORD_DEFAULT);
+                            //var_dump($gebruikersnaam, $wachtwoord); 
                             $voornaam = filter_input(INPUT_POST, "voornaam", FILTER_SANITIZE_STRING);
                             $achternaam = filter_input(INPUT_POST, "achternaam", FILTER_SANITIZE_STRING);
                             $telefoonnummer = filter_input(INPUT_POST, "telefoonnummer", FILTER_SANITIZE_STRING);
@@ -29,7 +30,7 @@
                             $query= $db->prepare("INSERT INTO customer(gebruikersnaam, wachtwoord, voornaam, achternaam, telefoonnummer, geslacht, emailadres) 
                                                 VALUES (:gebruikersnaam, :wachtwoord:, voornaam:, achternaam, :telefoonnummer, :geslacht, :emailadres)");
                             $query->bindParam("gebruikersnaam", $gebruikersnaam, PDO::PARAM_STR);
-                            $query->bindParam("wachtwoord", $wachtwoord, PDO::PARAM_STR);
+                            $query->bindValue("wachtwoord", $wachtwoord, PDO::PARAM_STR);
                             $query->bindParam("voornaam", $voornaam, PDO::PARAM_STR);
                             $query->bindParam("achternaam", $achternaam, PDO::PARAM_STR);
                             $query->bindParam("telefoonnummer", $telefoonnummer, PDO::PARAM_STR);

@@ -16,8 +16,8 @@
                             if (isset($_POST['Inloggen'])) {
                                 $gebruikersnaam = filter_input(INPUT_POST, "gebruikersnaam", FILTER_SANITIZE_STRING);
                                 $wachtwoord = $_POST['wachtwoord'];
-                                $query = $db->prepare("SELECT * FROM customer WHERE gebruikersnaam = :gebruikersnaam");
-                                $query->bindParam("gebruikersnaam", $gebruikersnaam);
+                                $query = $db->prepare("SELECT * FROM customer WHERE gebruikersnaam = :gebruiker");
+                                $query->bindParam("gebruiker", $gebruikersnaam);
                                 $query->execute();
                                 if ($query->rowCount() == 1) {
                                     $result = $query->fetch(PDO::FETCH_ASSOC);
@@ -46,7 +46,7 @@
                             <label for="">Wachtwoord</label><br>
                             <input type="password" name="wachtwoord" id=""><br><br>
                             <a href="account">
-                                <input type="submit" value="Inloggen" ac>
+                                <input type="submit" name="Inloggen" value="Inloggen" ac>
                             </a>
                                 
                         </article>

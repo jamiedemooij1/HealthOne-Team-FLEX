@@ -20,12 +20,12 @@ include_once('defaults/head.php');
     <div class="row gy-3 product-information">
         <?php
         global $getproducts;
-        global $productId;
-        var_dump($productId);
+        global $product;
+        var_dump($product);
         foreach ($getproducts as &$data) {
             echo "<h4>" . $data->Name .  "</h4>
                   <p> " . $data->Description . "</p>
-                  <a href='2/products'>
+                  <a href=". 3 .  "/products>
                     <img src='" . $data->Picture . "' class = 'product'>
                   </a>
             ";

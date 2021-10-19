@@ -32,6 +32,7 @@
                     <div class="column">
                         <h4>Review plaatsen</h4>
                     </div>
+                    
                     <div class="column">
                     <h4>Account informatie</h4>
                         Fit en gezond zijn is geen vanzelfsprekendheid. We moeten er zelf wat voor doen. Goede, gezonde voeding is hiervoor de basis.
