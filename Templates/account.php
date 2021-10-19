@@ -30,14 +30,32 @@
 
                     </div>
                     <div class="column">
-                        <h4>Review plaatsen</h4>
+                    
+                        <h4 class="article-head">Mijn reviews</h4>
+                        <article class="article-one">
+                            <h5><b>Mijn rating is 4 sterren</b></h5>
+                            <p>Ik was de 1e keer begonnen op het roeiapparaat Tunturi FitRow 70 Water. Het was geweldig om binnen 15 minuten 100 calorieën verbrand
+                                te hebbben en al mijn spieren goed kunnen gebruiken. Een hele goeie ervaring, voelde me echt een topsporter!
+                            </p>
+                        </article>
+                        
+                        
                     </div>
                     
                     <div class="column">
+                    <figure>
+                        <img class="banner-img img-profile" src='https://i.pinimg.com/736x/89/5e/4b/895e4bb9f86613d924162d509752b536.jpg' />
+                    </figure>
+                    <article class="article-two">
                     <h4>Account informatie</h4>
-                        Fit en gezond zijn is geen vanzelfsprekendheid. We moeten er zelf wat voor doen. Goede, gezonde voeding is hiervoor de basis.
-                        Bewegen hoort hier ook bij. Regelmatig bewegen zorgt voor een goede doorbloeding en draagt bij aan ontspanning van lichaam en geest.
-                        Sporten is goed voor sterkere spieren en voor de conditie. Sporcenter HealthOne heeft verschillende sportapparaten om mee te kunnen werken aan je conditie.
+                    <p>
+                        Abonnement: geldig tot 01/09/2023<br>
+                        Geslacht: Man<br>
+                        Lengte: 1.75 meter<br>
+                        Naam: Mark Rutte
+                    </p>                    
+                    </article>
+                    
                     </div>
                     <hr>
                 </div>

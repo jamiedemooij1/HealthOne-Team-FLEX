@@ -4,7 +4,22 @@
 a {
     color: black;
 }
-
+.account-info {
+    margin-left: 5vw;
+}
+.article-one {
+    background-color: rgb(184, 184, 184);
+    text-align: center;
+    padding: 1vw;
+    margin-left: 6vw;
+    margin-right: 6vw;
+}
+.article-two {
+    margin-left: 5vw;
+}
+.article-head {
+    text-align: center;
+}
 .banner-img {
     margin-bottom: 20px;
 }
@@ -26,7 +41,7 @@ body {
     width: 21vw;
 }
 .column {
-    width: 33%;
+    width: 40%;
 }
 .contact-page {
     height: 68vh;
@@ -44,6 +59,7 @@ body {
 }
 .first-col {
     padding-left: 2vw;
+    width: 20%;
 }
 .flex-column {
     float: left;
@@ -78,6 +94,10 @@ footer h3, a {
 }
 .img-groundplan {
     height: 60vh;
+}
+.img-profile {
+    width: 30vw;
+    padding-left: 5vw;
 }
 .inlogblok {
     text-align: center;
