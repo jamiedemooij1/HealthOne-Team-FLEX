@@ -14,40 +14,7 @@
                     <div class="">
                         <h3 class="registratie-heading">Registreren bij HealthOne</h3>
                        
-                    <?php 
-                    try {
-                        $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-                        if (isset($_POST['Registreren'])) {
-                            $gebruikersnaam = filter_input(INPUT_POST, "gebruikersnaam", FILTER_SANITIZE_STRING);
-                            $wachtwoord = password_hash(PASSWORD_DEFAULT);
-                            //var_dump($gebruikersnaam, $wachtwoord); 
-                            $voornaam = filter_input(INPUT_POST, "voornaam", FILTER_SANITIZE_STRING);
-                            $achternaam = filter_input(INPUT_POST, "achternaam", FILTER_SANITIZE_STRING);
-                            $telefoonnummer = filter_input(INPUT_POST, "telefoonnummer", FILTER_SANITIZE_STRING);
-                            $geslacht = filter_input(INPUT_POST, "geslacht", FILTER_SANITIZE_STRING);
-                            $emailadres = filter_input(INPUT_POST, "emailadres", FILTER_SANITIZE_STRING);
-                            var_dump($gebruikersnaam, $wachtwoord, $voornaam, $achternaam, $telefoonnummer, $geslacht, $emailadres);
-                            $query= $db->prepare("INSERT INTO customer(gebruikersnaam, wachtwoord, voornaam, achternaam, telefoonnummer, geslacht, emailadres) 
-                                                VALUES (:gebruikersnaam, :wachtwoord:, voornaam:, achternaam, :telefoonnummer, :geslacht, :emailadres)");
-                            $query->bindParam("gebruikersnaam", $gebruikersnaam, PDO::PARAM_STR);
-                            $query->bindValue("wachtwoord", $wachtwoord, PDO::PARAM_STR);
-                            $query->bindParam("voornaam", $voornaam, PDO::PARAM_STR);
-                            $query->bindParam("achternaam", $achternaam, PDO::PARAM_STR);
-                            $query->bindParam("telefoonnummer", $telefoonnummer, PDO::PARAM_STR);
-                            $query->bindParam("geslacht", $geslacht, PDO::PARAM_STR);
-                            $query->bindParam("emailadres", $emailadres, PDO::PARAM_STR);
-                            if ($query->execute()) {
-                                echo "Gefeliciteerd! Uw inschrijving is gelukt!";
-                            } else {
-                                echo "De inschrijving is nog niet gelukt, controleer alleen velden.";
-                            }
-                        } 
-                        
-                    }
-                    catch (PDOException $e) {
-                        die("Error!: " . $e->getMessage());
-                    }
-                    ?>
+                    
                     <form method="post" action="">
                         <input type="text" class="inputvelden" name="gebruikersnaam" placeholder="Gebruikersnaam*">
                         <input type="password" class="inputvelden" name="wachtwoord" placeholder="Wachtwoord*"><br>
@@ -62,11 +29,14 @@
                         <br>
                     <input type="text" class="email" name="emailadres" placeholder="Emailadres"><br>
                     <br>
-                    <input type="submit" name="Registreren" class="button" value="Registreren">
+                    <!--<input type="number" name="" name="id" min="2" class="id-number"><br>-->
+                    <input type="submit" name="registreren" class="button" value="registreren">
                     </form>
                     </div>
                     <br>
-                    
+                    <?php
+                        include_once ('defaults/registration.php');
+                    ?>
                     <hr>
                 </div>
                 <?php
