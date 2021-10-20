@@ -10,10 +10,11 @@
                             $achternaam = $_POST["achternaam"];
                             $telefoonnummer = $_POST["telefoonnummer"];
                             $geslacht = $_POST["geslacht"];
-                            $emailadres = $_POST["emailadres"];                            
+                            $emailadres = $_POST["emailadres"];   
+                            $abonnement = $_POST["abonnement"];                           
                             
-                            $query= $db->prepare("INSERT INTO customer(gebruikersnaam, wachtwoord, voornaam, achternaam, telefoonnummer, geslacht, emailadres) 
-                                                VALUES (:gebruikersnaam, :wachtwoord, :voornaam, :achternaam, :telefoonnummer, :geslacht, :emailadres)");    
+                            $query= $db->prepare("INSERT INTO customer(gebruikersnaam, wachtwoord, voornaam, achternaam, telefoonnummer, geslacht, emailadres, abonnement) 
+                                                VALUES (:gebruikersnaam, :wachtwoord, :voornaam, :achternaam, :telefoonnummer, :geslacht, :emailadres, :abonnement)");    
                             $query->bindParam("gebruikersnaam", $gebruikersnaam);
                             $query->bindValue("wachtwoord", $wachtwoord);
                             $query->bindParam("voornaam", $voornaam);
@@ -21,6 +22,7 @@
                             $query->bindParam("telefoonnummer", $telefoonnummer);
                             $query->bindParam("geslacht", $geslacht);
                             $query->bindParam("emailadres", $emailadres);
+                            $query->bindParam("abonnement", $abonnement);
                             if ($query->execute()) {
                                 echo "
                                 <p class='registration'>Gefeliciteerd! Uw inschrijving is gelukt!</p>";

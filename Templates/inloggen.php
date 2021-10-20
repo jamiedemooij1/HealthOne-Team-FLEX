@@ -13,14 +13,14 @@
                 <?php 
                         try {
                             $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-                            if (isset($_POST['Inloggen'])) {
+                            if (isset($_POST['inloggen'])) {
                                 $gebruikersnaam = filter_input(INPUT_POST, "gebruikersnaam", FILTER_SANITIZE_STRING);
                                 $wachtwoord = $_POST['wachtwoord'];
-                                $query = $db->prepare("SELECT * FROM customer WHERE gebruikersnaam = :gebruiker");
-                                $query->bindParam("gebruiker", $gebruikersnaam);
+                                $query = $db->prepare("SELECT * FROM customer WHERE gebruikersnaam =:user");
+                                $query->bindParam("user", $gebruikersnaam);
                                 $query->execute();
-                                if ($query->rowCount() == 1) {
-                                    $result = $query->fetch(PDO::FETCH_ASSOC);
+                                if ($query->rowCount() == 3) {
+                                    $result = $query->fetchAll(PDO::FETCH_CLASS);
                                     if (password_verify($wachtwoord, $result["wachtwoord"])) {
                                         echo "Juiste gegevens!";
                                     } else {
@@ -40,19 +40,17 @@
                 <div class="row">
                         
                         <article class="inlogblok">
-                            <h4>Inloggen HealthOne</h4>
-                            <label for="">Gebruikersnaam</label><br>
-                            <input type="text" name="gebruikersnaam" required>
-                            <br>
-                            <label for="">Wachtwoord</label><br>
-                            <input type="password" name="wachtwoord" required><br><br>
-                            <a href="account">
-                                <input type="submit" name="Inloggen" value="Inloggen" ac>
-                            </a>
+                            <form action="account" method="post">
+                                <h4>Inloggen HealthOne</h4>
+                                <label for="">Gebruikersnaam</label><br>
+                                <input type="text" name="gebruikersnaam" required>
+                                <br>
+                                <label for="">Wachtwoord</label><br>
+                                <input type="password" name="wachtwoord" required><br><br>
                                 
+                                <input type="submit" name="inloggen" value="inloggen">
+                            </form>
                         </article>
-                    
-
                     </div>
                     
                     <hr>

@@ -27,7 +27,7 @@
                         <input type="text" class="inputvelden" name="telefoonnummer" placeholder="Telefoonnummer">
                         <input type="text" class="inputvelden" name="geslacht" placeholder="Geslacht"><br>
                         <br>
-                        <input type="number" class="email" name="abonnement" placeholder="Hoelang in maanden*" required><br>
+                        <input type="number" class="email" name="abonnement" placeholder="Uw abonnement in maanden*" min="1" max="36" required><br>
                         <br>
                     <input type="text" class="email" name="emailadres" placeholder="Emailadres*" required><br>
                     <br>
