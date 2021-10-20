@@ -13,7 +13,7 @@
                 <div class="row contact-page">
                     <div class="flex-column contact-page">
                     <figure>
-                        <img class="banner-img img-groundplan" src='/public/img/categories/gym.jpg' />
+                        <img class="banner-img img-groundplan" src='/public/img/plattegrond.png' />
                         <br>
                     </figure>
 
