@@ -104,6 +104,9 @@ footer h3, a {
 }
 .inlogblok {
     text-align: center;
+    height: 17vw;
+    margin-top: 3vw;
+    
 }
 .inputvelden {
     margin-right: 3vw;
@@ -142,7 +145,7 @@ main {
     margin-bottom: 10px
 }
 .registratie {
-    height: 48vh;
+    height: 52vh;
     text-align: center;
 }
 .registration {

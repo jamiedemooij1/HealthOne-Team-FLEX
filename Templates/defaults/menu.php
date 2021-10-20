@@ -22,7 +22,7 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link"  href="/registreren">registreren</a>
+                    <a class="nav-link"  href="/registreren">aanmelden</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/inloggen">inloggen</a>

@@ -38,13 +38,14 @@
                         }
                     ?>
                 <div class="row">
+                        
                         <article class="inlogblok">
                             <h4>Inloggen HealthOne</h4>
                             <label for="">Gebruikersnaam</label><br>
-                            <input type="text" name="gebruikersnaam" id="">
+                            <input type="text" name="gebruikersnaam" required>
                             <br>
                             <label for="">Wachtwoord</label><br>
-                            <input type="password" name="wachtwoord" id=""><br><br>
+                            <input type="password" name="wachtwoord" required><br><br>
                             <a href="account">
                                 <input type="submit" name="Inloggen" value="Inloggen" ac>
                             </a>
