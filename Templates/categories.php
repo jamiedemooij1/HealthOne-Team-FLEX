@@ -10,7 +10,6 @@ include_once('defaults/head.php');
     <?php
     include_once('defaults/header.php');
     include_once('defaults/menu.php');
-    include_once('defaults/pictures.php');
     ?>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -18,6 +17,9 @@ include_once('defaults/head.php');
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
         </ol>
     </nav>
+    <?php
+    include_once('defaults/categorie.php');
+    ?>
     <div class="row gy-3 ">
         <?php
             global $categories;
