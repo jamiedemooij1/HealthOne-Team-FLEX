@@ -3,8 +3,7 @@
         <h2>Welke sport categorie past bij u?</h2>
         <p class="categorie">
             Bij Healthone train je altijd op de nieuwste apparatuur van de beste topmerken en kun je alles vinden om aan jouw sportieve doel te werken. 
-            We volgen de laatste trends en hebben de beste fitness experts in huis die ervoor zorgen dat het trainingsaanbod in onze clubs altijd 
-            actueel blijft. 
+            We volgen de laatste ontwikkelingen op sportgebied en onze experts kunnen u altijd het beste advies geven aan de hand van u doel.
         </p>
     </div>
     <div class="categorie-side">
