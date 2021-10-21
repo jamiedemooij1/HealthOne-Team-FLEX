@@ -63,7 +63,7 @@ body {
 }
 .flex-column {
     float: left;
-    width: 45%;
+    width: 50%;
     height: 200px;
     padding-left: 5%;
     height: 300px; /* Should be removed. Only for demonstration */
@@ -126,7 +126,8 @@ main {
     padding-left: 0.5vw;
 }
 .product {
-    width: 40vw;    
+    height: 30vw; 
+    margin-left: 10vw; 
 }
 /* De hometrainer pagina moet deze styling toegevoegd krijgen in de afbeelding, gezien deze afbeeldingstand anders is */
 .hometrainer {
@@ -139,7 +140,8 @@ main {
 }
 .product-information {
     padding-left: 3vw;
-}
+    height: 70vw;
+}   
 .pull-right img-thumbnail {
     margin-top: -10px;
     margin-bottom: 10px
@@ -161,5 +163,8 @@ main {
     content: "";
     display: table;
     clear: both;
+}
+.rowing {
+    height: 20vw;
 }
 
