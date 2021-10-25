@@ -22,8 +22,7 @@ include_once('defaults/head.php');
         global $getproducts;
         foreach ($getproducts as &$data) {
             echo "<h4>" . $data->Name .  "</h4>
-                  <p> " . $data->Description . "</p>
-                  <a href=". 3 .  "/products>
+                  <a href=$data->Category_id/product/$data->ID>
                     <img src='" . $data->Picture . "' class = 'product'>
                   </a>
             ";

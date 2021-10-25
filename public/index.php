@@ -1,4 +1,3 @@
- 
 <?php
 require '../Modules/Categories.php';
 require '../Modules/Products.php';
@@ -27,21 +26,13 @@ switch ($params[1]) {
                     saveReview($_POST['name'],$_POST['review']);
                     $reviews=getReviews($productId);
                 }
-                $productpage = getProduct($productId);
+                $productpage = getProductInformation($productId);
                 include_once "../Templates/product.php";
                 // TODO Zorg dat je hier de product pagina laat zien
-                
-                //Hier ben ik een poging te doen om binnen de producten de products toe te voegen dat de indivuele pagina komt
-                if (isset($_GET['product_id' . 'products'])) {
-                    include_once "../Templates/products.php";
-                }/* else if (isset($_GET['product_id'] . 'products')) {
-                    $getproductid = getProducts($categoryId);
-                    include_once "../Templates/products.php";
-                }*/
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
                 $getproducts = getProducts($categoryId);
-                include_once "../Templates/product.php";
+                include_once "../Templates/products.php";
             }
         } else {
             // TODO Toon de categorieen
