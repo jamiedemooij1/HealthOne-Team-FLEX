@@ -22,14 +22,14 @@
                     <h4>Contact HealthOne</h4>
                         <p>Wilt u graag eens langskomen om te komen voor een proefles of wilt u graag een coachinggesprek? <br> 
                         Kom langs op onze locatie </p>
-                    <?php 
-                    global $contact;
-                    echo "
-                        <p>Sportschool " . $contact['name'] . "<br>
-                         Adres: " . $contact['adres'] . "<br>
-                         Postcode: " . $contact['postcode'] . " " .  $contact['place'] ."<br>
-                         Telefoonnummer: " . $contact['phone'] . "</p>";
-                    ?>
+                        <?php 
+                        global $contact;
+                        echo "
+                            <p>Sportschool " . $contact['name'] . "<br>
+                            Adres: " . $contact['adres'] . "<br>
+                            Postcode: " . $contact['postcode'] . " " .  $contact['place'] ."<br>
+                            Telefoonnummer: " . $contact['phone'] . "</p>";
+                        ?>
                     <h5>Openingstijden</h5>
                     <p>
                         Maandag 07:00 - 21:00 <br>

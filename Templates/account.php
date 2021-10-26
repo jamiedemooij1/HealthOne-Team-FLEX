@@ -33,10 +33,12 @@
                     
                         <h4 class="article-head">Mijn reviews</h4>
                         <article class="article-one">
-                            <h5><b>Mijn rating is 4 sterren</b></h5>
-                            <p>Ik was de 1e keer begonnen op het roeiapparaat Tunturi FitRow 70 Water. Het was geweldig om binnen 15 minuten 100 calorieën verbrand
-                                te hebbben en al mijn spieren goed kunnen gebruiken. Een hele goeie ervaring, voelde me echt een topsporter!
-                            </p>
+                            <?php 
+                                global $review;
+                                echo "
+                                    <h5><b>" . $review['title'] . "</b></h5>
+                                    <p>" . $review['description'] . "</p>";
+                            ?>
                         </article>
                         
                         

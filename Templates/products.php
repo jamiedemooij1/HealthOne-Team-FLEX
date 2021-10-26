@@ -17,15 +17,16 @@ include_once('defaults/head.php');
             <li class="breadcrumb-item"><a href="/product">Product</a></li>
         </ol>
     </nav>
-    <div class="row gy-3 product-information">
+    <div class="row products-information">
     <?php
         global $getproducts;
         foreach ($getproducts as &$data) {
-            echo "<h4>" . $data->Name .  "</h4>
-                  <p> " . $data->Description . "</p>
-                  <a href=". 3 .  "/products>
-                    <img src='" . $data->Picture . "' class = 'product'>
-                  </a>
+            echo "<div class='col-sm-5'>
+                    <h4 class='product-heading'> " . $data->Name .  "</h4>
+                    <a href=$data->Category_id/product/$data->ID>
+                        <img src='" . $data->Picture . "' class = '" . $data->class .  "'>
+                    </a>
+                  </div>
             ";
         }
         ?>

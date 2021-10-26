@@ -142,7 +142,14 @@ main {
 }
 .product {
     height: 30vw; 
-    margin-left: 10vw; 
+    margin-left: 20%; 
+}
+.product-dif {
+    height: 30vw;
+    margin-left: 10%;
+}
+.product-heading {
+    text-align: center;
 }
 /* De hometrainer pagina moet deze styling toegevoegd krijgen in de afbeelding, gezien deze afbeeldingstand anders is */
 .hometrainer {
@@ -154,9 +161,12 @@ main {
     height: 30vh;
 }
 .product-information {
-    padding-left: 3vw;
-    height: 70vw;
+    height: 40vw;
 }   
+.products-information {
+    padding-left: 3vw;
+    height: 35vw;
+}  
 .pull-right img-thumbnail {
     margin-top: -10px;
     margin-bottom: 10px
@@ -180,6 +190,12 @@ main {
     clear: both;
 }
 .rowing {
-    height: 20vw;
+    height: 25vw;
+    width: 65vw;
+    margin-right: 3vw; 
+}
+.rowing-one {
+    height: 25vw;
+    width: 65vw;
 }
 

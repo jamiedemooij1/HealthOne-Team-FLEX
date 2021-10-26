@@ -19,9 +19,9 @@ include_once('defaults/head.php');
     </nav>
     <div class="row gy-3 product-information">
         <?php
-        global $getproducts;
+        global $productpage;
         global $product;
-        foreach ($getproducts as &$data) {
+        foreach ($productpage as &$data) {
             echo "
             <div class='flex-column'>
                 <h4>" . $data->Name .  "</h4>
