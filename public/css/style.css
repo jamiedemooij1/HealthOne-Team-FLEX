@@ -24,6 +24,11 @@ a {
 .banner-img {
     margin-bottom: 20px;
 }
+.basic-info {
+    margin-left: 10%;
+    width: 60%;
+    text-align: center;
+}
 body {
     background-color: #dacccc;
     max-width: 100%;
@@ -156,6 +161,9 @@ main {
     width: 25vw;
     height: 60vh;
 }
+.price-label {
+    color: rgb(104, 104, 104);
+}
 .product-img {
     width: 75%;
     height: 30vh;
@@ -165,14 +173,14 @@ main {
 }   
 .products-information {
     padding-left: 3vw;
-    height: 35vw;
+    height: 40vw;
 }  
 .pull-right img-thumbnail {
     margin-top: -10px;
     margin-bottom: 10px
 }
 .registratie {
-    height: 52vh;
+    height: 55vh;
     text-align: center;
 }
 .registration {

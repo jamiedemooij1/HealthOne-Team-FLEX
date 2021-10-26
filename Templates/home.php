@@ -26,6 +26,7 @@
                             <li>De website wordt geüpdate</li>
                             <li>In december komen er groepstrainingen</li>
                             <li>Linda Houwer start vanaf 11 oktober als trainer</li>
+                            
                         </ul>
 
                     </div>

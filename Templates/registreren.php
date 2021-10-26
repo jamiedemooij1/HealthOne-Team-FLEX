@@ -28,6 +28,9 @@
                         <input type="text" class="inputvelden" name="geslacht" placeholder="Geslacht"><br>
                         <br>
                         <input type="number" class="email" name="abonnement" placeholder="Uw abonnement in maanden*" min="1" max="36" required><br>
+                        
+                        <label class="price-label">&#x20AC 21,99 per maand - &#x20AC 249,99 per jaar</label>
+                        <br>
                         <br>
                     <input type="text" class="email" name="emailadres" placeholder="Emailadres*" required><br>
                     <br>
