@@ -17,6 +17,13 @@ a {
 .article-two {
     margin-left: 5vw;
 }
+.article-four {
+    background-color: rgb(184, 184, 184);
+    padding: 1vw;
+    width: 80%;
+    margin-left: 10%;
+    height: 40%;
+}
 .article-head {
     padding-top: 3vw;
     text-align: center;
@@ -127,6 +134,9 @@ footer h3, a {
     height: 17vw;
     margin-top: 3vw;
     
+}
+.input-one {
+    float: right;
 }
 .inputvelden {
     margin-right: 3vw;

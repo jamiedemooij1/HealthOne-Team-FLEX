@@ -32,7 +32,8 @@ include_once('defaults/head.php');
         ?>
         <br><br>
         <p class="basic-info">
-            U kunt bij ons komen sporten zonder afspraak. U kunt gebruik maken van de vrije apparaten voor maximaal een halfuur. 
+            U kunt bij ons komen sporten zonder afspraak. U kunt gebruik maken van de vrije apparaten voor maximaal een halfuur, u kunt gewoon
+            beginnen op een apparaat en mocht u er niet uitkomen kunt u altijd hulp/advies vragen aan een van onze medewerkers. <br>
             Zodat iedereen optiomaal gebruik van hun tijd kan maken. Het is niet mogelijk om een apparaat te reserveren, 
             ieder heeft dezelfde kans en anders moet u even ergens anders op trainen als u een voorkeur heeft.
         </p>
