@@ -33,12 +33,38 @@
                     
                         <h4 class="article-head">Mijn reviews</h4>
                         <article class="article-one">
-                            <h5><b>Mijn rating is 4 sterren</b></h5>
-                            <p>Ik was de 1e keer begonnen op het roeiapparaat Tunturi FitRow 70 Water. Het was geweldig om binnen 15 minuten 100 calorieën verbrand
-                                te hebbben en al mijn spieren goed kunnen gebruiken. Een hele goeie ervaring, voelde me echt een topsporter!
-                            </p>
+                            <?php 
+                                global $review;
+                                echo "
+                                    <h5><b>" . $review['title'] . "</b></h5>
+                                    <p>" . $review['description'] . "</p>";
+                            ?>
                         </article>
-                        
+                        <h4 class="article-head">Review plaatsen</h4>
+                        <article class="article-four">
+                            <form method="post" action="#">
+                                <label><b>Uw naam</b> </label>
+                                <input type="text" name="naam" class="input-one">
+                                <br>
+                                <br>
+                                <label><b>Titel</b></label>
+                                <input type="text" name="title" class="input-one">
+                                <br>
+                                <br>
+                                <label><b>Uw ervaring</b></label>
+                                <textarea name="description" class="input-one"></textarea>
+                                <br>
+                                <br>
+                                <br>
+                                <label><b>Hoeveel sterren</b></label>
+                                <input type="number" name="rating" class="input-one" min="1" max="5">
+                                <br>
+                                <input type="submit" name="verzenden" value="Verzenden">
+                            </form>
+                            <?php
+                        include_once ('defaults/review.php');
+                    ?>
+                        </article>
                         
                     </div>
                     

@@ -34,6 +34,7 @@ switch ($params[1]) {
                 $getproducts = getProducts($categoryId);
                 include_once "../Templates/products.php";
             }
+
         } else {
             // TODO Toon de categorieen
             $categories = getCategories();
@@ -56,6 +57,7 @@ switch ($params[1]) {
     case 'account':
         $titleSuffix = ' | Account';
         $contact = getContact();
+        $review = getReview();
         include_once "../Templates/account.php";
         break;
     default:

@@ -17,12 +17,24 @@ a {
 .article-two {
     margin-left: 5vw;
 }
+.article-four {
+    background-color: rgb(184, 184, 184);
+    padding: 1vw;
+    width: 80%;
+    margin-left: 10%;
+    height: 40%;
+}
 .article-head {
     padding-top: 3vw;
     text-align: center;
 }
 .banner-img {
     margin-bottom: 20px;
+}
+.basic-info {
+    margin-left: 10%;
+    width: 60%;
+    text-align: center;
 }
 body {
     background-color: #dacccc;
@@ -123,6 +135,9 @@ footer h3, a {
     margin-top: 3vw;
     
 }
+.input-one {
+    float: right;
+}
 .inputvelden {
     margin-right: 3vw;
 }
@@ -142,27 +157,40 @@ main {
 }
 .product {
     height: 30vw; 
-    margin-left: 10vw; 
+    margin-left: 20%; 
+}
+.product-dif {
+    height: 30vw;
+    margin-left: 10%;
+}
+.product-heading {
+    text-align: center;
 }
 /* De hometrainer pagina moet deze styling toegevoegd krijgen in de afbeelding, gezien deze afbeeldingstand anders is */
 .hometrainer {
     width: 25vw;
     height: 60vh;
 }
+.price-label {
+    color: rgb(104, 104, 104);
+}
 .product-img {
     width: 75%;
     height: 30vh;
 }
 .product-information {
-    padding-left: 3vw;
-    height: 70vw;
+    height: 40vw;
 }   
+.products-information {
+    padding-left: 3vw;
+    height: 40vw;
+}  
 .pull-right img-thumbnail {
     margin-top: -10px;
     margin-bottom: 10px
 }
 .registratie {
-    height: 52vh;
+    height: 55vh;
     text-align: center;
 }
 .registration {
@@ -180,6 +208,12 @@ main {
     clear: both;
 }
 .rowing {
-    height: 20vw;
+    height: 25vw;
+    width: 65vw;
+    margin-right: 3vw; 
+}
+.rowing-one {
+    height: 25vw;
+    width: 65vw;
 }
 

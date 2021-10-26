@@ -17,17 +17,33 @@ include_once('defaults/head.php');
             <li class="breadcrumb-item"><a href="/product">Product</a></li>
         </ol>
     </nav>
-    <div class="row gy-3 product-information">
+    <div class="row products-information">
     <?php
         global $getproducts;
         foreach ($getproducts as &$data) {
+<<<<<<< HEAD
             echo "<h4>" . $data->Name .  "</h4>
                   <a href=$data->Category_id/product/$data->ID>
                     <img src='" . $data->Picture . "' class = 'product'>
                   </a>
+=======
+            echo "<div class='col-sm-5'>
+                    <h4 class='product-heading'> " . $data->Name .  "</h4>
+                    <a href=$data->Category_id/product/$data->ID>
+                        <img src='" . $data->Picture . "' class = '" . $data->class .  "'>
+                    </a>
+                  </div>
+>>>>>>> Thierry
             ";
         }
         ?>
+        <br><br>
+        <p class="basic-info">
+            U kunt bij ons komen sporten zonder afspraak. U kunt gebruik maken van de vrije apparaten voor maximaal een halfuur, u kunt gewoon
+            beginnen op een apparaat en mocht u er niet uitkomen kunt u altijd hulp/advies vragen aan een van onze medewerkers. <br>
+            Zodat iedereen optiomaal gebruik van hun tijd kan maken. Het is niet mogelijk om een apparaat te reserveren, 
+            ieder heeft dezelfde kans en anders moet u even ergens anders op trainen als u een voorkeur heeft.
+        </p>
     </div>
     <hr>
     <?php
