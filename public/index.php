@@ -56,7 +56,6 @@ switch ($params[1]) {
     case 'contact':
         $titleSuffix = ' | Contact';
         $contact = getContact();
-        $info = getInfo();
         include_once "../Templates/contact.php";
         break;
     case 'account':
@@ -67,7 +66,9 @@ switch ($params[1]) {
         break;
     default:
         $titleSuffix = ' | Home';
+        
         include_once "../Templates/home.php";
+
 
 }
 
