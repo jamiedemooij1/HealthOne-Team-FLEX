@@ -19,18 +19,24 @@
 
                     </div>
                     <div class="flex-column contact-page">
-                    <h4>Contact HealthOne</h4>
-                        <p>Wilt u graag eens langskomen om te komen voor een proefles of wilt u graag een coachinggesprek? <br> 
-                        Kom langs op onze locatie </p>
+                    
                         <?php 
                         global $contact;
                         echo "
+                        <h4>". $contact['title'] . "</h4>
+                        <p>" . $contact['description'] . "</p>
                             <p>Sportschool " . $contact['name'] . "<br>
                             Adres: " . $contact['adres'] . "<br>
                             Postcode: " . $contact['postcode'] . " " .  $contact['place'] ."<br>
                             Telefoonnummer: " . $contact['phone'] . "</p>";
                         ?>
                     <h5>Openingstijden</h5>
+                    <?php 
+                        global $info;
+                        foreach($info as &$data)
+                        echo "
+                            <p>" . $data['day'] . " " . $data['hours'] . "</p>";
+                        ?>
                     <p>
                         Maandag 07:00 - 21:00 <br>
                         Dinsdag 07:00 - 21:00 <br>

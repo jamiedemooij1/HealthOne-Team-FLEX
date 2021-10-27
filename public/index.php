@@ -29,11 +29,14 @@ switch ($params[1]) {
                 }
                 $productpage = getProductInformation($productId);
                 include_once "../Templates/product.php";
+                $review = getReview();
+                
                 // TODO Zorg dat je hier de product pagina laat zien
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
                 $getproducts = getProducts($categoryId);
                 include_once "../Templates/products.php";
+                
             }
 
         } else {
@@ -53,6 +56,7 @@ switch ($params[1]) {
     case 'contact':
         $titleSuffix = ' | Contact';
         $contact = getContact();
+        $info = getInfo();
         include_once "../Templates/contact.php";
         break;
     case 'account':

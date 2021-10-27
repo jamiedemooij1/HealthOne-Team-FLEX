@@ -19,8 +19,8 @@
                                 $query = $db->prepare("SELECT * FROM customer WHERE gebruikersnaam =:user");
                                 $query->bindParam("user", $gebruikersnaam);
                                 $query->execute();
-                                if ($query->rowCount() == 3) {
-                                    $result = $query->fetchAll(PDO::FETCH_CLASS);
+                                if ($query->rowCount() == 1) {
+                                    $result = $query->fetch(PDO::FETCH_ASSOC);
                                     if (password_verify($wachtwoord, $result["wachtwoord"])) {
                                         echo "Juiste gegevens!";
                                     } else {
