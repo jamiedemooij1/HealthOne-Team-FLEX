@@ -26,15 +26,6 @@ include_once('defaults/head.php');
             <div class='flex-column'>
                 <h4>" . $data->Name .  "</h4>
                 <p class='description'> " . $data->Description . "</p>
-                <h4 class='article-head'>Reviews</h4>
-                <article class='article-one'>
-                    <h5><b>Mijn rating is 4 sterren</b></h5>
-                    <p>Ik was de 1e keer begonnen op het roeiapparaat Tunturi FitRow 70 Water. Het was geweldig om binnen 15 minuten 100 calorieën verbrand
-                        te hebbben en al mijn spieren goed kunnen gebruiken. Een hele goeie ervaring, voelde me echt een topsporter!
-                        <br><br>
-                        Mark Rutte
-                    </p>
-                </article>
                 
             </div>
             <div class='flex-column'>
@@ -42,6 +33,18 @@ include_once('defaults/head.php');
                
             </div>
             ";
+            global $reviews;
+            foreach($reviews as &$data){
+                echo "
+            <h4 class='article-head'>Mijn reviews</h4>
+                <article class='article-one'>
+                    <h5><b>$data->title</b></h5>
+                    <p>$data->description
+                    </p>
+                </article>
+                
+            ";
+            }
         }
         ?>
     </div>

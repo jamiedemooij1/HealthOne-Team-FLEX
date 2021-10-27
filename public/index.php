@@ -2,7 +2,8 @@
 require '../Modules/Categories.php';
 require '../Modules/Products.php';
 require '../Modules/Contact.php';
-// require '../Modules/Database.php';
+require '../Modules/Database.php';
+require '../Modules/Reviews.php';
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
@@ -22,9 +23,9 @@ switch ($params[1]) {
                 $productId = $_GET['product_id'];
                 $product = getProductInformation($productId);
                 $titleSuffix = ' | ' . $product[0]->Name;
+                $reviews=getReview($productId);
                 if(isset($_POST['name']) && isset($_POST['review'])) {
                     saveReview($_POST['name'],$_POST['review']);
-                    $reviews=getReviews($productId);
                 }
                 $productpage = getProductInformation($productId);
                 include_once "../Templates/product.php";
