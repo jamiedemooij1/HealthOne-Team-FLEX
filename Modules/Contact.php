@@ -9,13 +9,3 @@ function getContact()
         $result = $query->fetch(PDO::FETCH_ASSOC);
         return $result;
 }
-
-function getReview()
-{
-        $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-        $query = $db->prepare("SELECT * FROM review");
-        $query->execute();
-        $result = $query->fetch(PDO::FETCH_ASSOC);
-        return $result;
-}
-?>
