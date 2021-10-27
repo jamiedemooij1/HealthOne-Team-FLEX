@@ -28,11 +28,14 @@ switch ($params[1]) {
                 }
                 $productpage = getProductInformation($productId);
                 include_once "../Templates/product.php";
+                $review = getReview();
+                
                 // TODO Zorg dat je hier de product pagina laat zien
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
                 $getproducts = getProducts($categoryId);
                 include_once "../Templates/products.php";
+                
             }
 
         } else {
@@ -62,7 +65,9 @@ switch ($params[1]) {
         break;
     default:
         $titleSuffix = ' | Home';
+        
         include_once "../Templates/home.php";
+
 
 }
 

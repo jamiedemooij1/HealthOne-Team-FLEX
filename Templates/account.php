@@ -11,7 +11,7 @@
                 include_once ('defaults/menu.php');
                 include_once ('defaults/pictures.php');
                 ?>
-                <div class="row">
+                <div class="row account">
                     <div class="column first-col">
 
                         <h4>Favorieten</h4><br>
@@ -35,7 +35,7 @@
                         <article class="article-one">
                             <?php 
                                 global $review;
-                                echo "
+                                echo "  
                                     <h5><b>" . $review['title'] . "</b></h5>
                                     <p>" . $review['description'] . "</p>";
                             ?>
@@ -58,16 +58,37 @@
                                 <br>
                                 <label><b>Hoeveel sterren</b></label>
                                 <input type="number" name="rating" class="input-one" min="1" max="5">
+                                <br><br>
+                                <label for="dog-names">Choose a dog name:</label>
+                                <select name="dog-names" id="dog-names" class="menu">
+                                    <option value="rigatoni">Kies je apparaat</option>
+                                    <?php
+                                        try {
+                                                $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+                                                $query = $db->prepare("SELECT * FROM product" );
+                                                $query->execute();
+                                                $result = $query->fetchAll(PDO::FETCH_CLASS);
+                                                foreach ($result as &$data) {
+                                                    echo  "
+                                                    <option>". $data->Name . "</option>";
+                                                }            
+                                            }
+                                            catch (PDOException $e) {
+                                                die("Error! : " . $e->getMessage());
+                                            }
+                                        ?>
+                                </select>
+                                <br>
                                 <br>
                                 <input type="submit" name="verzenden" value="Verzenden">
+                                
+
                             </form>
                             <?php
                         include_once ('defaults/review.php');
                     ?>
                         </article>
-                        
                     </div>
-                    
                     <div class="column">
                     <figure>
                         <img class="banner-img img-profile" src='https://i.pinimg.com/736x/89/5e/4b/895e4bb9f86613d924162d509752b536.jpg' />

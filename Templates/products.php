@@ -38,12 +38,20 @@ include_once('defaults/head.php');
         }
         ?>
         <br><br>
-        <p class="basic-info">
-            U kunt bij ons komen sporten zonder afspraak. U kunt gebruik maken van de vrije apparaten voor maximaal een halfuur, u kunt gewoon
-            beginnen op een apparaat en mocht u er niet uitkomen kunt u altijd hulp/advies vragen aan een van onze medewerkers. <br>
-            Zodat iedereen optiomaal gebruik van hun tijd kan maken. Het is niet mogelijk om een apparaat te reserveren, 
-            ieder heeft dezelfde kans en anders moet u even ergens anders op trainen als u een voorkeur heeft.
-        </p>
+        <?php
+            try {
+                    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+                    $query = $db->prepare("SELECT * FROM info" );
+                    $query->execute();
+                    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($result as &$data) {
+                        echo "<p class='basic-info'>"  . $data["info"] . "</p>";
+                    }            
+                }
+                catch (PDOException $e) {
+                    die("Error! : " . $e->getMessage());
+                }
+        ?>
     </div>
     <hr>
     <?php
