@@ -59,7 +59,7 @@
                                 <label><b>Hoeveel sterren</b></label>
                                 <input type="number" name="rating" class="input-one" min="1" max="5">
                                 <br><br>
-                                <label for="dog-names">Choose a dog name:</label>
+                                <label for="dog-names">Kies jouw type apparaat:</label>
                                 <select name="dog-names" id="dog-names" class="menu">
                                     <option value="rigatoni">Kies je apparaat</option>
                                     <?php
