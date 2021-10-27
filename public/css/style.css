@@ -13,9 +13,10 @@ a {
 .article-one {
     background-color: rgb(184, 184, 184);
     text-align: center;
+    width: 40%;
     padding: 1vw;
-    margin-left: 6vw;
-    margin-right: 6vw;
+    margin-left: 10%;
+    
 }
 .article-two {
     margin-left: 5vw;
@@ -29,7 +30,8 @@ a {
 }
 .article-head {
     padding-top: 3vw;
-    text-align: center;
+    margin-left: 25%;
+
 }
 .banner-img {
     margin-bottom: 20px;

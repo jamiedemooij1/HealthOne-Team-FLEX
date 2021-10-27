@@ -61,7 +61,7 @@ switch ($params[1]) {
     case 'account':
         $titleSuffix = ' | Account';
         $contact = getContact();
-        $review = getReview();
+    //$review = getReview();
         include_once "../Templates/account.php";
         break;
     default:
