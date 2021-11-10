@@ -90,18 +90,18 @@
                         </article>
                     </div>
                     <div class="column">
-                    <figure>
-                        <img class="banner-img img-profile" src='https://i.pinimg.com/736x/89/5e/4b/895e4bb9f86613d924162d509752b536.jpg' />
-                    </figure>
-                    <article class="article-two">
-                    <h4>Account informatie</h4>
-                    <p>
-                        Abonnement: geldig tot 01/09/2023<br>
-                        Geslacht: Man<br>
-                        Lengte: 1.75 meter<br>
-                        Naam: Mark Rutte
-                    </p>                    
-                    </article>
+                        <figure>
+                            <img class="banner-img img-profile" src='https://i.pinimg.com/736x/89/5e/4b/895e4bb9f86613d924162d509752b536.jpg' />
+                        </figure>
+                        <article class="article-two">
+                            <h4>Account informatie</h4>
+                            <p>
+                                Abonnement: geldig tot 01/09/2023<br>
+                                Geslacht: Man<br>
+                                Lengte: 1.75 meter<br>
+                                Naam: Mark Rutte
+                            </p>                    
+                        </article>
                     
                     </div>
                     <hr>

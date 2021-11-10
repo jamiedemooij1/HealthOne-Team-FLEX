@@ -9,6 +9,7 @@ $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
 $titleSuffix = "";
+include_once "../Modules/Login.php";
 
 switch ($params[1]) {
     case 'categories':
@@ -47,7 +48,27 @@ switch ($params[1]) {
         break;
     case 'inloggen':
         $titleSuffix = ' | Inloggen';
+        
+        if (isset($_POST['inloggen'])) {
+            $gebruikersnaam = filter_input(INPUT_POST, "gebruikersnaam", FILTER_SANITIZE_STRING);
+            $wachtwoord = $_POST['wachtwoord'];
+            $checkLoginning = checkLogin();
+            /*if ($query->rowCount() == 1) {
+                $result = $query->fetch(PDO::FETCH_ASSOC);
+                if (password_verify($wachtwoord, $result["wachtwoord"])) {
+                    echo "Juiste gegevens!";
+                } else {
+                    echo "Onjuiste gegevens!";
+                }
+            } else {
+                echo "Onjuiste gegevens!";
+            }
+            echo "<br>";*/
+            }
+
+            
         include_once "../Templates/inloggen.php";
+
         break;
     case 'registreren':
         $titleSuffix = ' | Registreren';
@@ -61,7 +82,7 @@ switch ($params[1]) {
     case 'account':
         $titleSuffix = ' | Account';
         $contact = getContact();
-    //$review = getReview();
+        //$review = getReview();
         include_once "../Templates/account.php";
         break;
     default:
