@@ -13,7 +13,7 @@
                 <div class="row">
                         
                         <article class="inlogblok">
-                            <form action="account" method="post">
+                            <form action="" method="post">
                                 <h4>Inloggen HealthOne</h4>
                                 <label for="">Gebruikersnaam</label><br>
                                 <input type="text" name="gebruikersnaam" required>

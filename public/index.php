@@ -52,7 +52,15 @@ switch ($params[1]) {
         if (isset($_POST['inloggen'])) {
             $gebruikersnaam = filter_input(INPUT_POST, "gebruikersnaam", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['wachtwoord'];
-            $checkLoginning = checkLogin();
+            $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
+            if ($checkLoginning == true) {
+                $titleSuffix = ' | Account';
+                $contact = getContact();
+                //$review = getReview();
+                include_once "../Templates/account.php";
+            } else {
+                echo "Login failed";
+            }
             /*if ($query->rowCount() == 1) {
                 $result = $query->fetch(PDO::FETCH_ASSOC);
                 if (password_verify($wachtwoord, $result["wachtwoord"])) {
