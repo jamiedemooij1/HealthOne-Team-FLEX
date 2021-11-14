@@ -1,3 +1,14 @@
+<?php
+    session_start();
+
+    $_SESSION['login'] = true;
+    $_SESSION['username'];
+    if ($_SESSION['username'] == "Boogeyman") {
+        echo "Welkom John Wick";
+    }
+
+    echo $_SESSION['username'];
+    ?>
 <!DOCTYPE html>
     <html>
 

@@ -2,7 +2,7 @@
     function checkLogin (string $username, string $password)
 {
         global $pdo;
-        $query = $pdo->prepare("SELECT gebruikersnaam, wachtwoord FROM customer WHERE gebruikersnaam = :user AND wachtwoord =:password");
+        $query = $pdo->prepare("SELECT username, password FROM customer WHERE username = :user AND password =:password");
         $query->bindParam(":user", $username);
         $query->bindParam(":password", $password);
         $query->execute(); 

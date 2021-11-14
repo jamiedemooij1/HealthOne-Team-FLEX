@@ -16,23 +16,23 @@
                        
 
                     <form method="post" action="">
-                        <input type="text" class="inputvelden" name="gebruikersnaam" placeholder="Gebruikersnaam*" required>
-                        <input type="password" class="inputvelden" name="wachtwoord" placeholder="Wachtwoord*" required><br>
+                        <input type="text" class="inputvelden" name="username" placeholder="Gebruikersnaam*" required>
+                        <input type="password" class="inputvelden" name="password" placeholder="Wachtwoord*" required><br>
                         <br>
                     
-                        <input type="text" class="inputvelden" name="voornaam" placeholder="Voornaam*" required>
-                        <input type="text" class="inputvelden" name="achternaam" placeholder="Achternaam*" required><br>
+                        <input type="text" class="inputvelden" name="first-name" placeholder="Voornaam*" required>
+                        <input type="text" class="inputvelden" name="last-name" placeholder="Achternaam*" required><br>
                         <br>
                     
-                        <input type="text" class="inputvelden" name="telefoonnummer" placeholder="Telefoonnummer">
-                        <input type="text" class="inputvelden" name="geslacht" placeholder="Geslacht"><br>
+                        <input type="text" class="inputvelden" name="phonenumber" placeholder="Telefoonnummer">
+                        <input type="text" class="inputvelden" name="gender" placeholder="Geslacht"><br>
                         <br>
-                        <input type="number" class="email" name="abonnement" placeholder="Uw abonnement in maanden*" min="1" max="36" required><br>
+                        <input type="number" class="email" name="subscription" placeholder="Uw abonnement in maanden*" min="1" max="36" required><br>
                         
                         <label class="price-label">&#x20AC 21,99 per maand - &#x20AC 249,99 per jaar</label>
                         <br>
                         <br>
-                    <input type="text" class="email" name="emailadres" placeholder="Emailadres*" required><br>
+                    <input type="text" class="email" name="mailaddress" placeholder="Emailadres*" required><br>
                     <br>
                     <!--<input type="number" name="" name="id" min="2" class="id-number"><br>-->
                     <input type="submit" name="registreren" class="button" value="registreren">

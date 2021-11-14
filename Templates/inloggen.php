@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    if ($_SESSION['login'] == true) {
+        $params = explode("/", $request);
+        $titleSuffix = ' | Account';
+        $contact = getContact();
+        //$review = getReview();
+        include_once "../Templates/account.php";
+    } else {
+        echo "";
+    }
+
+?>
 <!DOCTYPE html>
     <html>
 
@@ -16,12 +29,13 @@
                             <form action="" method="post">
                                 <h4>Inloggen HealthOne</h4>
                                 <label for="">Gebruikersnaam</label><br>
-                                <input type="text" name="gebruikersnaam" required>
+                                <input type="text" name="username" required>
                                 <br>
                                 <label for="">Wachtwoord</label><br>
-                                <input type="password" name="wachtwoord" required><br><br>
+                                <input type="password" name="password" required><br><br>
                                 
                                 <input type="submit" name="inloggen" value="inloggen">
+                                <label for="" name="loginStatus"></label>
                             </form>
                         </article>
                     </div>

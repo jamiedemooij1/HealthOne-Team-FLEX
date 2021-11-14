@@ -36,8 +36,7 @@ switch ($params[1]) {
             } else {
                 // TODO Zorg dat je hier alle producten laat zien van een categorie
                 $getproducts = getProducts($categoryId);
-                include_once "../Templates/products.php";
-                
+                include_once "../Templates/products.php";      
             }
 
         } else {
@@ -50,10 +49,11 @@ switch ($params[1]) {
         $titleSuffix = ' | Inloggen';
         
         if (isset($_POST['inloggen'])) {
-            $gebruikersnaam = filter_input(INPUT_POST, "gebruikersnaam", FILTER_SANITIZE_STRING);
-            $wachtwoord = $_POST['wachtwoord'];
+            $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+            $wachtwoord = $_POST['password'];
             $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
             if ($checkLoginning == true) {
+                $params = explode("/", $request);
                 $titleSuffix = ' | Account';
                 $contact = getContact();
                 //$review = getReview();
@@ -61,20 +61,7 @@ switch ($params[1]) {
             } else {
                 echo "Login failed";
             }
-            /*if ($query->rowCount() == 1) {
-                $result = $query->fetch(PDO::FETCH_ASSOC);
-                if (password_verify($wachtwoord, $result["wachtwoord"])) {
-                    echo "Juiste gegevens!";
-                } else {
-                    echo "Onjuiste gegevens!";
-                }
-            } else {
-                echo "Onjuiste gegevens!";
-            }
-            echo "<br>";*/
-            }
-
-            
+        }
         include_once "../Templates/inloggen.php";
 
         break;
