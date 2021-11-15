@@ -53,6 +53,9 @@ switch ($params[1]) {
             $wachtwoord = $_POST['password'];
             $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
             if ($checkLoginning == true) {
+                session_start();
+                $_SESSION['login'] = true;
+                $_SESSION['username'] = $gebruikersnaam;
                 $params = explode("/", $request);
                 $titleSuffix = ' | Account';
                 $contact = getContact();

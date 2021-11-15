@@ -20,8 +20,8 @@
                         <input type="password" class="inputvelden" name="password" placeholder="Wachtwoord*" required><br>
                         <br>
                     
-                        <input type="text" class="inputvelden" name="first-name" placeholder="Voornaam*" required>
-                        <input type="text" class="inputvelden" name="last-name" placeholder="Achternaam*" required><br>
+                        <input type="text" class="inputvelden" name="firstname" placeholder="Voornaam*" required>
+                        <input type="text" class="inputvelden" name="lastname" placeholder="Achternaam*" required><br>
                         <br>
                     
                         <input type="text" class="inputvelden" name="phonenumber" placeholder="Telefoonnummer">
