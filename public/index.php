@@ -4,7 +4,7 @@ require '../Modules/Products.php';
 require '../Modules/Contact.php';
 require '../Modules/Database.php';
 require '../Modules/Reviews.php';
-
+session_start();
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -47,13 +47,13 @@ switch ($params[1]) {
         break;
     case 'inloggen':
         $titleSuffix = ' | Inloggen';
-        
+            
         if (isset($_POST['inloggen'])) {
             $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
             $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
             if ($checkLoginning == true) {
-                session_start();
+                
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $gebruikersnaam;
                 $params = explode("/", 'account');
@@ -63,7 +63,7 @@ switch ($params[1]) {
                 include_once "../Templates/account.php";
             } else {
                 echo "Login failed";
-            }
+            }   
         }
         include_once "../Templates/inloggen.php";
 

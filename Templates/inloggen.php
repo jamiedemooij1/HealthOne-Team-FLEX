@@ -1,5 +1,10 @@
 <?php
-    session_start();
+function startSession() {
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+}
+    
     if ($_SESSION['login'] == true) {
         $params = explode("/", $request);
         $titleSuffix = ' | Account';

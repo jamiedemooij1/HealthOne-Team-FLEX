@@ -22,7 +22,7 @@
                             $query->execute();
                             $result = $query->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($result as &$data) {
-                                echo "<div class='flex-column'>";
+                                echo "<div class='flex-column home-info'>";
                                     echo "<h4>" . $data["title"] ."</h4>";
                                     echo "<p>"  . $data["description"] . "</p>";
                                 echo "</div>";
