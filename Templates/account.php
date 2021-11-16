@@ -1,6 +1,14 @@
 <?php
     global $gebruikersnaam;
-    ?>
+    
+    setcookie('username', "$gebruikersnaam", time() + 120);
+    if (isset($_COOKIE['username'])) {
+        $user = $_COOKIE['username'];
+    } else {
+        echo "De cookie is verlopen.";
+    }
+    
+?>  
 <!DOCTYPE html>
     <html>
 
