@@ -2,6 +2,7 @@
     global $gebruikersnaam;
             
 ?>  
+
 <!DOCTYPE html>
     <html>
 

@@ -56,7 +56,8 @@ switch ($params[1]) {
                 
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $gebruikersnaam;
-                $params = explode("/", 'account');
+
+                $params = explode("/", "account");
                 $titleSuffix = ' | Account';
                 $contact = getContact();
                 $personalReviews = getPersonalReviews();
@@ -71,6 +72,10 @@ switch ($params[1]) {
         break;
     case 'registreren':
         $titleSuffix = ' | Registreren';
+        include_once "../Templates/registreren.php";
+        break;
+    case 'admin':
+        $titleSuffix = ' | Admin';
         include_once "../Templates/registreren.php";
         break;
     case 'contact':
