@@ -10,7 +10,7 @@ $params = explode("/", $request);
 $title = "HealthOne";
 $titleSuffix = "";
 include_once "../Modules/Login.php";
-
+$personalReviews = getPersonalReviews();
 switch ($params[1]) {
     case 'categories':
         session_start();
@@ -98,14 +98,11 @@ switch ($params[1]) {
         $titleSuffix = ' | Registreren';
         include_once "../Templates/registreren.php";
         break;
-<<<<<<< HEAD
     case 'admin':
         session_start();
         $titleSuffix = ' | Admin';
         include_once "../Templates/registreren.php";
         break;
-=======
->>>>>>> 176b59f1ba1dfd0bac2c8df1a5b97dfb7e5624ff
     case 'contact':
         session_start();
         $titleSuffix = ' | Contact';
