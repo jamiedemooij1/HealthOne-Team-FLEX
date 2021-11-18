@@ -28,7 +28,7 @@
                             echo "<li class='nav-item'>
                             <a class='nav-link' href= /account>account</a>
                             <li class='nav-item'>
-                            <a class='nav-link' href= /inloggen>uitloggen</a>";
+                            <a class='nav-link' href= /uitloggen>uitloggen</a>";
                            
                         } else {
                             echo "<li class='nav-item'>

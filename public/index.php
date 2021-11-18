@@ -4,7 +4,7 @@ require '../Modules/Products.php';
 require '../Modules/Contact.php';
 require '../Modules/Database.php';
 require '../Modules/Reviews.php';
-session_start();
+
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -13,6 +13,7 @@ include_once "../Modules/Login.php";
 
 switch ($params[1]) {
     case 'categories':
+        session_start();
         $titleSuffix = ' | Categories';
         
         if (isset($_GET['category_id'])) {
@@ -46,6 +47,7 @@ switch ($params[1]) {
         }
         break;
     case 'inloggen':
+        session_start();
         $titleSuffix = ' | Inloggen';
             
         if (isset($_POST['inloggen'])) {
@@ -69,26 +71,54 @@ switch ($params[1]) {
         include_once "../Templates/inloggen.php";
 
         break;
+    case 'uitloggen':
+        session_start();
+        $titleSuffix = ' | Uitloggen';
+        if (isset($_POST['inloggen'])) {
+            $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+            $wachtwoord = $_POST['password'];
+            $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
+            if ($checkLoginning == true) {
+                
+                $_SESSION['login'] = true;
+                $_SESSION['username'] = $gebruikersnaam;
+
+                $params = explode("/", "account");
+                $titleSuffix = ' | Account';
+                $contact = getContact();
+                //$review = getReview();
+                include_once "../Templates/account.php";
+            } else {
+                echo "Login failed";
+            }   
+        }
+        include_once "../Templates/uitloggen.php";
+        break;
     case 'registreren':
+        session_start();
         $titleSuffix = ' | Registreren';
         include_once "../Templates/registreren.php";
         break;
     case 'admin':
+        session_start();
         $titleSuffix = ' | Admin';
         include_once "../Templates/registreren.php";
         break;
     case 'contact':
+        session_start();
         $titleSuffix = ' | Contact';
         $contact = getContact();
         include_once "../Templates/contact.php";
         break;
     case 'account':
+        session_start();
         $titleSuffix = ' | Account';
         $contact = getContact();
         //$review = getReview();
         include_once "../Templates/account.php";
         break;
     default:
+    session_start();
         $titleSuffix = ' | Home';
         
         include_once "../Templates/home.php";
