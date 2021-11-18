@@ -21,7 +21,6 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
-<<<<<<< HEAD
                 
                     
                     <?php 
@@ -29,7 +28,7 @@
                             echo "<li class='nav-item'>
                             <a class='nav-link' href= /account>account</a>
                             <li class='nav-item'>
-                            <a class='nav-link' href= /uitloggen>uitloggen</a>";
+                            <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>";
                            
                         } else {
                             echo "<li class='nav-item'>
@@ -40,13 +39,6 @@
                         }
                     ?>
                     <!--<a class='nav-link' href= /inloggen>inloggen</a>-->
-=======
-                <li class="nav-item">
-                    <a class="nav-link"  href="/registreren">aanmelden</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/inloggen">inloggen</a>
->>>>>>> 176b59f1ba1dfd0bac2c8df1a5b97dfb7e5624ff
                 </li>
             </ul>
         </div>

@@ -73,6 +73,7 @@ switch ($params[1]) {
     case 'uitloggen':
         session_start();
         $titleSuffix = ' | Uitloggen';
+        $_SESSION['login'] = false;
         if (isset($_POST['inloggen'])) {
             $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
@@ -98,14 +99,11 @@ switch ($params[1]) {
         $titleSuffix = ' | Registreren';
         include_once "../Templates/registreren.php";
         break;
-<<<<<<< HEAD
     case 'admin':
         session_start();
         $titleSuffix = ' | Admin';
         include_once "../Templates/registreren.php";
         break;
-=======
->>>>>>> 176b59f1ba1dfd0bac2c8df1a5b97dfb7e5624ff
     case 'contact':
         session_start();
         $titleSuffix = ' | Contact';
@@ -114,6 +112,11 @@ switch ($params[1]) {
         break;
     case 'account':
         session_start();
+        echo $_SESSION['login'];
+        if (isset($_POST['uitloggen'])) {
+            $_SESSION['login'] = false;
+            echo $_SESSION['login'];
+        }
         $titleSuffix = ' | Account';
         $contact = getContact();
         //$review = getReview();

@@ -1,14 +1,4 @@
-<?php
-<<<<<<< HEAD
-function startSession() {
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-}
-=======
-    session_start();
->>>>>>> 176b59f1ba1dfd0bac2c8df1a5b97dfb7e5624ff
-?>
+
 <!DOCTYPE html>
     <html>
 
