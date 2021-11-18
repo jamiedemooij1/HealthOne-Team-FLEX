@@ -21,24 +21,11 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
-                
-                    
-                    <?php 
-                        if ($_SESSION['login'] == true) {
-                            echo "<li class='nav-item'>
-                            <a class='nav-link' href= /account>account</a>
-                            <li class='nav-item'>
-                            <a class='nav-link' href= /inloggen>uitloggen</a>";
-                           
-                        } else {
-                            echo "<li class='nav-item'>
-                                    <a class='nav-link'  href='/registreren'>aanmelden</a>
-                                </li>
-                                <li class='nav-item'>
-                            <a class='nav-link' href= /inloggen>inloggen</a>";
-                        }
-                    ?>
-                    <!--<a class='nav-link' href= /inloggen>inloggen</a>-->
+                <li class="nav-item">
+                    <a class="nav-link"  href="/registreren">aanmelden</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/inloggen">inloggen</a>
                 </li>
             </ul>
         </div>
