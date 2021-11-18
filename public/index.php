@@ -10,7 +10,7 @@ $params = explode("/", $request);
 $title = "HealthOne";
 $titleSuffix = "";
 include_once "../Modules/Login.php";
-
+$personalReviews = getPersonalReviews();
 switch ($params[1]) {
     case 'categories':
         $titleSuffix = ' | Categories';
@@ -59,6 +59,7 @@ switch ($params[1]) {
                 $params = explode("/", 'account');
                 $titleSuffix = ' | Account';
                 $contact = getContact();
+                $personalReviews = getPersonalReviews();
                 //$review = getReview();
                 include_once "../Templates/account.php";
             } else {
@@ -80,7 +81,7 @@ switch ($params[1]) {
     case 'account':
         $titleSuffix = ' | Account';
         $contact = getContact();
-        //$review = getReview();
+        $personalReviews = getPersonalReviews();
         include_once "../Templates/account.php";
         break;
     default:

@@ -38,10 +38,12 @@
                         <h4 class="article-head">Mijn reviews</h4>
                         <article class="article-one">
                             <?php 
-                                global $review;
-                                echo "  
-                                    <h5><b>" . $review['title'] . "</b></h5>
-                                    <p>" . $review['description'] . "</p>";
+                                global $personalReviews;
+                                foreach($personalReviews as &$data){
+                                    echo "  
+                                    <h5><b>" . $data->title . "</b></h5>
+                                    <p>" . $data->description . "</p>";
+                                }
                             ?>
                         </article>
                         <h4 class="article-head">Review plaatsen</h4>
