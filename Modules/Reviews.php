@@ -10,4 +10,12 @@ function getReview(int $reviewId){
     $result = $query->fetchAll(PDO::FETCH_CLASS);
     return $result;
 }
+
+function getPersonalReviews(){
+    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+    $query = $db->prepare("SELECT * FROM review WHERE id=103");
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_CLASS);
+    return $result;
+}
 ?>

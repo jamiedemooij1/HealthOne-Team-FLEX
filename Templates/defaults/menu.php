@@ -21,6 +21,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">
+<<<<<<< HEAD
                 
                     
                     <?php 
@@ -39,6 +40,13 @@
                         }
                     ?>
                     <!--<a class='nav-link' href= /inloggen>inloggen</a>-->
+=======
+                <li class="nav-item">
+                    <a class="nav-link"  href="/registreren">aanmelden</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/inloggen">inloggen</a>
+>>>>>>> 176b59f1ba1dfd0bac2c8df1a5b97dfb7e5624ff
                 </li>
             </ul>
         </div>
