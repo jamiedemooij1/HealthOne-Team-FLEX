@@ -10,7 +10,7 @@ $params = explode("/", $request);
 $title = "HealthOne";
 $titleSuffix = "";
 include_once "../Modules/Login.php";
-
+$personalReviews = getPersonalReviews();
 switch ($params[1]) {
     case 'categories':
         session_start();
