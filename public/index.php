@@ -4,7 +4,7 @@ require '../Modules/Products.php';
 require '../Modules/Contact.php';
 require '../Modules/Database.php';
 require '../Modules/Reviews.php';
-
+$_SESSION['login'] = false;
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
