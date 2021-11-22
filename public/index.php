@@ -57,7 +57,7 @@ switch ($params[1]) {
                 
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $gebruikersnaam;
-                $params = explode("/", 'account');
+                
                 $titleSuffix = ' | Account';
                 $contact = getContact();
                 //$review = getReview();
