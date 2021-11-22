@@ -11,9 +11,17 @@ function getReview(int $reviewId){
     return $result;
 }
 
-function getPersonalReviews(){
+function getUserForReview(string $username){
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-    $query = $db->prepare("SELECT * FROM review WHERE id=103");
+    $query = $db->prepare("SELECT * FROM customer WHERE username = :username");
+    $query->bindParam('username', $username);
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_CLASS);
+    return $result;
+}
+function getPersonalReviews(int $userid){
+    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+    $query = $db->prepare("SELECT * FROM review WHERE customer_id = $userid");
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_CLASS);
     return $result;
