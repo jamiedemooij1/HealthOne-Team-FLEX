@@ -59,11 +59,22 @@ switch ($params[1]) {
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $gebruikersnaam;
 
+                $params[1] = "/account";
                 $params = explode("/", "account");
                 $titleSuffix = ' | Account';
                 $contact = getContact();
                 //$review = getReview();
                 include_once "../Templates/account.php";
+                $controleRole = checkRole();
+                if ($controleRole == true) {
+                    header ('Location: Templates/account.php');
+                    $_SESSION['login'] = true;
+                    $_SESSION['username'] = $gebruikersnaam;
+                    $titleSuffix = ' | Account';
+                    $contact = getContact();
+                    //$review = getReview();
+                    include_once "../Templates/account.php";
+                }
             } else {
                 echo "Login failed";
             }   
@@ -82,7 +93,7 @@ switch ($params[1]) {
                 
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $gebruikersnaam;
-
+                //header ('Location: /Templates/account.php', 'account');
                 $params = explode("/", "account");
                 $titleSuffix = ' | Account';
                 $contact = getContact();
