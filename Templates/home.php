@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+<?php
+function startSession() {
+    if (!isset($_SESSION)) {
+        session_start();
+        $_SESSION['login'] = false;
+    }
+}
+?>
+>>>>>>> Thierry
 <!DOCTYPE html>
     <html>
 
