@@ -4,7 +4,7 @@ require '../Modules/Products.php';
 require '../Modules/Contact.php';
 require '../Modules/Database.php';
 require '../Modules/Reviews.php';
-$_SESSION['login'] = false;
+
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -67,7 +67,7 @@ switch ($params[1]) {
                 include_once "../Templates/account.php";
                 $controleRole = checkRole();
                 if ($controleRole == true) {
-                    header ('Location: Templates/account.php');
+                    header ('Location: Templates/admin/account.php');
                     $_SESSION['login'] = true;
                     $_SESSION['username'] = $gebruikersnaam;
                     $titleSuffix = ' | Account';
