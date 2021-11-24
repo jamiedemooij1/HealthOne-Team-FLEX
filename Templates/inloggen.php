@@ -24,7 +24,7 @@
                 <label for=''>Wachtwoord</label><br>
                 <input type='password' name='password' required><br><br>
                 
-                <input type='submit' name='inloggen' value='inloggen'>
+                <input type='submit' name='inloggen' value='inloggen' >
                 <label for='' name='loginStatus'></label>
             </form>
         </article>

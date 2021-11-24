@@ -1,17 +1,13 @@
 <?php
-<<<<<<< HEAD
-
-=======
 function startSession() {
     if (!isset($_SESSION)) {
         session_start();
-        
     }
 }
->>>>>>> Thierry
     global $gebruikersnaam;
             
 ?>  
+
 <!DOCTYPE html>
     <html>
 
@@ -48,12 +44,10 @@ function startSession() {
                         <h4 class="article-head">Mijn reviews</h4>
                         <article class="article-one">
                             <?php 
-                                global $personalReviews;
-                                foreach($personalReviews as &$data){
-                                    echo "  
-                                    <h5><b>" . $data->title . "</b></h5>
-                                    <p>" . $data->description . "</p>";
-                                }
+                                global $review;
+                                echo "  
+                                    <h5><b>" . $review['title'] . "</b></h5>
+                                    <p>" . $review['description'] . "</p>";
                             ?>
                         </article>
                         <h4 class="article-head">Review plaatsen</h4>
