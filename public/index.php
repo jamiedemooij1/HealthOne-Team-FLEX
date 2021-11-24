@@ -61,7 +61,7 @@ switch ($params[1]) {
                 $titleSuffix = ' | Account';
                 $contact = getContact();
                 //$review = getReview();
-                include_once "../Templates/account.php";
+                include_once "..    /Templates/account.php";
                 $controleRole = checkRole();
                 if ($controleRole == true) {
                     header ('Location: Templates/admin/account.php');
@@ -122,13 +122,17 @@ switch ($params[1]) {
     case 'account':
         session_start();
         echo $_SESSION['login'];
+        $username = $_SESSION['username'];
+        $userid = getUserForReview($username);
+        foreach($userid as &$data){
+            $personalReviews = getPersonalReviews($data->id);
+        }
         if (isset($_POST['uitloggen'])) {
             $_SESSION['login'] = false;
             echo $_SESSION['login'];
         }
         $titleSuffix = ' | Account';
         $contact = getContact();
-        //$review = getReview();
         include_once "../Templates/account.php";
         break;
     default:
@@ -143,5 +147,8 @@ switch ($params[1]) {
 function getTitle() {
     global $title, $titleSuffix;
     return $title . $titleSuffix;
+}
+function showUserReview(){
+
 }
 ?>
