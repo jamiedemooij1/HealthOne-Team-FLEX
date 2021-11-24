@@ -39,64 +39,7 @@ function startSession() {
                         </figure>
 
                     </div>
-                    <div class="column">
-                    
-                        <h4 class="article-head">Mijn reviews</h4>
-                        <article class="article-one">
-                            <?php 
-                                global $review;
-                                echo "  
-                                    <h5><b>" . $review['title'] . "</b></h5>
-                                    <p>" . $review['description'] . "</p>";
-                            ?>
-                        </article>
-                        <h4 class="article-head">Review plaatsen</h4>
-                        <article class="article-four">
-                            <form method="post" action="#">
-                                <label><b>Uw naam</b> </label>
-                                <input type="text" name="naam" class="input-one">
-                                <br>
-                                <br>
-                                <label><b>Titel</b></label>
-                                <input type="text" name="title" class="input-one">
-                                <br>
-                                <br>
-                                <label><b>Uw ervaring</b></label>
-                                <textarea name="description" class="input-one"></textarea>
-                                <br>
-                                <br>
-                                <br>
-                                <label><b>Hoeveel sterren</b></label>
-                                <input type="number" name="rating" class="input-one" min="1" max="5">
-                                <br><br>
-                                <label for="dog-names">Kies jouw type apparaat:</label>
-                                <select name="dog-names" id="dog-names" class="menu">
-                                    <option value="rigatoni">Kies je apparaat</option>
-                                    <?php
-                                        try {
-                                                $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-                                                $query = $db->prepare("SELECT * FROM product" );
-                                                $query->execute();
-                                                $result = $query->fetchAll(PDO::FETCH_CLASS);
-                                                foreach ($result as &$data) {
-                                                    echo  "
-                                                    <option>". $data->Name . "</option>";
-                                                }            
-                                            }
-                                            catch (PDOException $e) {
-                                                die("Error! : " . $e->getMessage());
-                                            }
-                                        ?>
-                                </select>
-                                <br>
-                                <br>
-                                <input type="submit" name="verzenden" value="Verzenden">
-                            </form>
-                            <?php
-                        include_once ('defaults/review.php');
-                    ?>
-                        </article>
-                    </div>
+                    <h4>Je bent administrator</h4>
                     <div class="column">
                     <?php
                          if ($_SESSION['login'] == true) {

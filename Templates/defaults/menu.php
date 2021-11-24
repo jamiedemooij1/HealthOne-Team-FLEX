@@ -25,10 +25,14 @@
                     
                     <?php 
                         if ($_SESSION['login'] == true) {
-                            echo "<li class='nav-item'>
-                            <a class='nav-link' href= /account>account</a>
+                            echo "
                             <li class='nav-item'>
-                            <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>";
+                            <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>
+                            <li class='nav-item'>
+                            
+                            <a class='nav-link' href= /account>account</a>
+                            ";
+                            
                            
                         } else {
                             echo "<li class='nav-item'>

@@ -48,29 +48,38 @@ switch ($params[1]) {
     case 'inloggen':
         session_start();
         $titleSuffix = ' | Inloggen';
-            
+        $urlChange;
         if (isset($_POST['inloggen'])) {
             $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+            $status = filter_input(INPUT_POST, "role", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
+            $checkStatus = checkRole($gebruikersnaam, $wachtwoord);
             $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
             if ($checkLoginning == true) {
-                
-                $_SESSION['login'] = true;
-                $_SESSION['username'] = $gebruikersnaam;
-                
-                $titleSuffix = ' | Account';
-                $contact = getContact();
-                //$review = getReview();
-                include_once "..    /Templates/account.php";
-                $controleRole = checkRole();
-                if ($controleRole == true) {
-                    header ('Location: Templates/admin/account.php');
-                    $_SESSION['login'] = true;
-                    $_SESSION['username'] = $gebruikersnaam;
-                    $titleSuffix = ' | Account';
-                    $contact = getContact();
-                    //$review = getReview();
-                    include_once "../Templates/account.php";
+                echo $status;
+                echo $checkStatus;
+                if ($_SERVER["REQUST_METHOD"] == "POST") {
+                    $sql =  "select * from username where username='" . $gebruikersnaam . "' AND password='" . $wachtwoord .  "'";
+                    $result = mysqli_query($data, $sql);
+                    $row = mysqli_fetch_array($result);
+                    if ($row['role'] == "user") {
+                        header('Location: /account');
+                        $_SESSION['login'] = true;
+                        $_SESSION['username'] = $gebruikersnaam;
+                        
+                        $titleSuffix = ' | Account';
+                        $contact = getContact();
+                        //$review = getReview();
+                        include_once "../Templates/account.php";
+                    } else if ($row['role'] == "admin") {
+                        header('Location: /admin');
+                        $_SESSION['login'] = true;
+                        $_SESSION['username'] = $gebruikersnaam;
+                        $titleSuffix = ' | Account';
+                        $contact = getContact();
+                        //$review = getReview();
+                        include_once "../Templates/admin/account.php";
+                    }
                 }
             } else {
                 echo "Login failed";
@@ -88,10 +97,9 @@ switch ($params[1]) {
             $wachtwoord = $_POST['password'];
             $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
             if ($checkLoginning == true) {
-                
+                header('Location: /account');
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $gebruikersnaam;
-                //header ('Location: /Templates/account.php', 'account');
                 $params = explode("/", "account");
                 $titleSuffix = ' | Account';
                 $contact = getContact();
@@ -111,7 +119,7 @@ switch ($params[1]) {
     case 'admin':
         session_start();
         $titleSuffix = ' | Admin';
-        include_once "../Templates/registreren.php";
+        include_once "../Templates/admin/account.php";
         break;
     case 'contact':
         session_start();
@@ -121,7 +129,6 @@ switch ($params[1]) {
         break;
     case 'account':
         session_start();
-        echo $_SESSION['login'];
         $username = $_SESSION['username'];
         $userid = getUserForReview($username);
         foreach($userid as &$data){
