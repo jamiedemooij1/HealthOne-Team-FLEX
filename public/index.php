@@ -77,12 +77,7 @@ switch ($params[1]) {
             $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
             $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
-            $username = $_SESSION['username'];
-            $userid = getUserForReview($username);
-            var_dump($userid);
-            $keys = array_keys($userid);
-            $key = $keys[0];
-            $personalReviews = getPersonalReviews($key);
+
             if ($checkLoginning == true) {
                 
                 $_SESSION['login'] = true;
@@ -90,10 +85,6 @@ switch ($params[1]) {
 
                 $params = explode("/", "account");
                 $titleSuffix = ' | Account';
-                $contact = getContact();
-                $userid = getUserForReview();
-                $personalReviews = getPersonalReviews($userid);
-                //$review = getReview();
                 include_once "../Templates/account.php";
             } else {
                 echo "Login failed";
@@ -145,5 +136,9 @@ switch ($params[1]) {
 function getTitle() {
     global $title, $titleSuffix;
     return $title . $titleSuffix;
+}
+
+function showUserReview(){
+
 }
 ?>
