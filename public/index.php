@@ -57,13 +57,7 @@ switch ($params[1]) {
                 
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $gebruikersnaam;
-<<<<<<< HEAD
                 
-=======
-
-                $params[1] = "/account";
-                $params = explode("/", "account");
->>>>>>> Thierry
                 $titleSuffix = ' | Account';
                 $contact = getContact();
                 //$review = getReview();
@@ -93,12 +87,6 @@ switch ($params[1]) {
             $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
             $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
-            $username = $_SESSION['username'];
-            $userid = getUserForReview($username);
-            var_dump($userid);
-            $keys = array_keys($userid);
-            $key = $keys[0];
-            $personalReviews = getPersonalReviews($key);
             if ($checkLoginning == true) {
                 
                 $_SESSION['login'] = true;
@@ -107,8 +95,6 @@ switch ($params[1]) {
                 $params = explode("/", "account");
                 $titleSuffix = ' | Account';
                 $contact = getContact();
-                $userid = getUserForReview();
-                $personalReviews = getPersonalReviews($userid);
                 //$review = getReview();
                 include_once "../Templates/account.php";
             } else {
@@ -136,17 +122,13 @@ switch ($params[1]) {
     case 'account':
         session_start();
         echo $_SESSION['login'];
-        $username = $_SESSION['username'];
-        $userid = getUserForReview($username);
-        foreach($userid as &$data){
-            $personalReviews = getPersonalReviews($data->id);
-        }
         if (isset($_POST['uitloggen'])) {
             $_SESSION['login'] = false;
             echo $_SESSION['login'];
         }
         $titleSuffix = ' | Account';
         $contact = getContact();
+        //$review = getReview();
         include_once "../Templates/account.php";
         break;
     default:

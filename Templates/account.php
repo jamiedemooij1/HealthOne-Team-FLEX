@@ -1,14 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-=======
-function startSession() {
-    if (!isset($_SESSION)) {
-        session_start();
-        
-    }
-}
->>>>>>> Thierry
     global $gebruikersnaam;
             
 ?>  
