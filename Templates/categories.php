@@ -46,6 +46,7 @@ include_once('defaults/head.php');
 
     ?>
 </div>
+<script src="/public/js/action.js"></script>
 
 </body>
 </html>

@@ -20,7 +20,7 @@
                     <a class="nav-link" href="/contact">contact</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ms-auto">
+            
                 
                     
                     <?php 
@@ -33,6 +33,7 @@
                             $result = $query->fetchAll(PDO::FETCH_ASSOC);
                             foreach($result as &$data) {
                             echo "
+                            <ul class='navbar-nav ms-auto menu-box'>
                             <li class='nav-item'>
                             <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>
                             </li>
@@ -50,7 +51,9 @@
                             }
                            
                         } else {
-                            echo "<li class='nav-item'>
+                            echo 
+                            "<ul class='navbar-nav ms-auto'>
+                                <li class='nav-item'>
                                     <a class='nav-link'  href='/registreren'>aanmelden</a>
                                 </li>
                                 <li class='nav-item'>

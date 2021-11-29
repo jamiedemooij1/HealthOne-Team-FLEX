@@ -55,5 +55,7 @@
             ?>
 
         </div>
+        <script src="/public/js/action.js"></script>
+
     </body>
 </html>
