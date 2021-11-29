@@ -24,26 +24,42 @@
                 
                     
                     <?php 
+                    
                         if ($_SESSION['login'] == true) {
+                            $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+                            $query = $db->prepare("SELECT profile, info FROM customer WHERE username = :username");
+                            $query->bindParam('username', $_SESSION['username']);
+                            $query->execute();
+                            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($result as &$data) {
                             echo "
                             <li class='nav-item'>
                             <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>
-                            <li class='nav-item'>
-                            
-                            <a class='nav-link' href= /account>account</a>
+                            </li>
+                            <li class='nav-item profile'>
+                            <div class='dropdown'>
+                                <img src='" . $data['profile'] . "' style='width: 40%; border-radius: 30%;' alt=''>
+                                <div class='dropdown-content'>
+                                    <a href='/account'>Account</a>
+                                    <a href='/password'>Wachtwoord aanpassen</a>
+                                    <a href='#'>Link 3</a>
+                                </div>
+                            </div>
+                            </li>
                             ";
-                            
+                            }
                            
                         } else {
                             echo "<li class='nav-item'>
                                     <a class='nav-link'  href='/registreren'>aanmelden</a>
                                 </li>
                                 <li class='nav-item'>
-                            <a class='nav-link' href= /inloggen>inloggen</a>";
+                            <a class='nav-link' href= /inloggen>inloggen</a> 
+                            </li>";
                         }
                     ?>
                     <!--<a class='nav-link' href= /inloggen>inloggen</a>-->
-                </li>
+                
             </ul>
         </div>
     </div>

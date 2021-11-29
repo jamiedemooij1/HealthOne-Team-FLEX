@@ -53,11 +53,18 @@ switch ($params[1]) {
             $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $status = filter_input(INPUT_POST, "role", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
-            $checkStatus = checkRole($gebruikersnaam, $wachtwoord);
+            //$checkStatus = checkRole($gebruikersnaam, $wachtwoord);
             $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
             if ($checkLoginning == true) {
                 echo $status;
-                echo $checkStatus;
+                header('Location: /account');
+                $_SESSION['login'] = true;
+                $_SESSION['username'] = $gebruikersnaam;
+                
+                $titleSuffix = ' | Account';
+                $contact = getContact();
+                //$review = getReview();
+                include_once "../Templates/account.php";
                 if ($_SERVER["REQUST_METHOD"] == "POST") {
                     $sql =  "select * from username where username='" . $gebruikersnaam . "' AND password='" . $wachtwoord .  "'";
                     $result = mysqli_query($data, $sql);
@@ -145,7 +152,7 @@ switch ($params[1]) {
     default:
     session_start();
         $titleSuffix = ' | Home';
-        
+              
         include_once "../Templates/home.php";
 
 
