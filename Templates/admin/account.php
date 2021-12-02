@@ -23,21 +23,10 @@ function startSession() {
                 ?>
                 <div class="row account">
                     <div class="column first-col">
-
-                        <h4>Favorieten</h4><br>
-                        <h5>Roeiapparaat</h5>
-                        <figure>
-                            <img class="img-account" src="https://www.fitgear.nl/2391-thickbox_default/roeiapparaat-dunlop-air-750-roeitrainer.jpg" />
-                        </figure>
-                        <h5>Loopband</h5>
-                        <figure>
-                            <img class="img-account" src="https://cdn.webshopapp.com/shops/281654/files/282878592/loopband-fitrun-50i.jpg" />
-                        </figure>
-                        <h5>..</h5>
-                        <figure>
-                            <img class="img-account" src="" />
-                        </figure>
-
+                    <h4>Change the website</h4>
+                    <p>Als administrator kun je apparaten toevoegen en verwijderen, reageren op reviews en overige
+                        dingen aanpassen.
+                    </p>
                     </div>
                     <h4>Je bent administrator</h4>
                     <div class="column">

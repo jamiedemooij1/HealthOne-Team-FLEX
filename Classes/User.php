@@ -11,7 +11,7 @@ class User
     public $lastname;
     public $phonenumber;
     public $gender;
-    public $mailaddress;
+    public $email;
 
     public function __construct()
     {

@@ -4,6 +4,7 @@ require '../Modules/Products.php';
 require '../Modules/Contact.php';
 require '../Modules/Database.php';
 require '../Modules/Reviews.php';
+require '../Modules/Login.php';
 
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
@@ -47,14 +48,44 @@ switch ($params[1]) {
         break;
     case 'inloggen':
         session_start();
+        var_dump($_SESSION);
         $titleSuffix = ' | Inloggen';
-        $urlChange;
         if (isset($_POST['inloggen'])) {
-            $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+            $results = checkLogin();
+                switch($results) {
+                    case 'admin':
+                        header("Location: /admin/account");
+                        $_SESSION['login'] = true;
+                        $_SESSION['username'] = $gebruikersnaam;
+                        include_once "../Templates/admin/account.php";
+                        break;
+                    case 'user':
+                        header('Location: /account');
+                        $_SESSION['login'] = true;
+                        $_SESSION['username'] = $gebruikersnaam;
+                        
+                        $titleSuffix = ' | Account';
+                        $contact = getContact();
+                        //$review = getReview();
+                        include_once "../Templates/account.php";
+                        break;
+                    case 'failure':
+                        $message = "Email of wachtwoord is niet correct ingevuld!";
+                        include_once "../Templates/inloggen.php";
+                        break;
+                    case 'incomplete':
+                        $message = "Formulier niet volledig ingevuld!";
+                        include_once "../Templates/inloggen.php";
+                        break;
+                }
+            } else {
+                include_once "../Templates/inloggen.php";
+            }
+            break;
+            /*$gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $status = filter_input(INPUT_POST, "role", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
-            //$checkStatus = checkRole($gebruikersnaam, $wachtwoord);
-            $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
+            
             if ($checkLoginning == true) {
                 echo $status;
                 header('Location: /account');
@@ -92,7 +123,7 @@ switch ($params[1]) {
                 echo "Login failed";
             }   
         }
-        include_once "../Templates/inloggen.php";
+        include_once "../Templates/inloggen.php";*/
 
         break;
     case 'uitloggen':
@@ -133,6 +164,9 @@ switch ($params[1]) {
         $titleSuffix = ' | Contact';
         $contact = getContact();
         include_once "../Templates/contact.php";
+        break;
+    case 'admin':
+        include_once ('admin.php');
         break;
     case 'account':
         session_start();
