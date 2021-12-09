@@ -6,11 +6,14 @@ require '../Modules/Database.php';
 require '../Modules/Reviews.php';
 require '../Modules/Login.php';
 
+define("DOC_ROOT", realpath(dirname(__DIR__)));
+define("TEMPLATE_ROOT", realpath(DOC_ROOT . "/Templates"));
+
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
 $titleSuffix = "";
-include_once "../Modules/Login.php";
+
 switch ($params[1]) {
     case 'categories':
         session_start();
@@ -47,101 +50,69 @@ switch ($params[1]) {
         }
         break;
     case 'inloggen':
+        
         session_start();
-        var_dump($_SESSION);
         $titleSuffix = ' | Inloggen';
-        if (isset($_POST['inloggen'])) {
-            $results = checkLogin();
-                switch($results) {
-                    case 'admin':
-                        header("Location: /admin/account");
-                        $_SESSION['login'] = true;
-                        $_SESSION['username'] = $gebruikersnaam;
-                        include_once "../Templates/admin/account.php";
-                        break;
-                    case 'user':
-                        header('Location: /account');
-                        $_SESSION['login'] = true;
-                        $_SESSION['username'] = $gebruikersnaam;
-                        
-                        $titleSuffix = ' | Account';
-                        $contact = getContact();
-                        //$review = getReview();
-                        include_once "../Templates/account.php";
-                        break;
-                    case 'failure':
-                        $message = "Email of wachtwoord is niet correct ingevuld!";
-                        include_once "../Templates/inloggen.php";
-                        break;
-                    case 'incomplete':
-                        $message = "Formulier niet volledig ingevuld!";
-                        include_once "../Templates/inloggen.php";
-                        break;
-                }
-            } else {
-                include_once "../Templates/inloggen.php";
-            }
-            break;
-            /*$gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
-            $status = filter_input(INPUT_POST, "role", FILTER_SANITIZE_STRING);
-            $wachtwoord = $_POST['password'];
             
+        if (isset($_POST['inloggen'])) {
+            $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+            $wachtwoord = $_POST['password'];
+            $checkLoginning = checkLogin($username, $wachtwoord);
             if ($checkLoginning == true) {
-                echo $status;
-                header('Location: /account');
+                header ('Location: account', 'account');
                 $_SESSION['login'] = true;
-                $_SESSION['username'] = $gebruikersnaam;
-                
+                $_SESSION['username'] = $username;
                 $titleSuffix = ' | Account';
                 $contact = getContact();
                 //$review = getReview();
                 include_once "../Templates/account.php";
-                if ($_SERVER["REQUST_METHOD"] == "POST") {
-                    $sql =  "select * from username where username='" . $gebruikersnaam . "' AND password='" . $wachtwoord .  "'";
-                    $result = mysqli_query($data, $sql);
-                    $row = mysqli_fetch_array($result);
-                    if ($row['role'] == "user") {
-                        header('Location: /account');
-                        $_SESSION['login'] = true;
-                        $_SESSION['username'] = $gebruikersnaam;
-                        
-                        $titleSuffix = ' | Account';
-                        $contact = getContact();
-                        //$review = getReview();
-                        include_once "../Templates/account.php";
-                    } else if ($row['role'] == "admin") {
-                        header('Location: /admin');
-                        $_SESSION['login'] = true;
-                        $_SESSION['username'] = $gebruikersnaam;
-                        $titleSuffix = ' | Account';
-                        $contact = getContact();
-                        //$review = getReview();
-                        include_once "../Templates/admin/account.php";
-                    }
-                }
+                echo "de rol is niet bekend!";
             } else {
                 echo "Login failed";
             }   
         }
-        include_once "../Templates/inloggen.php";*/
-
+        include_once "../Templates/inloggen.php";
         break;
+        /*
+        $titleSuffix = ' | Uitloggen';
+
+        if (isset($_POST['inloggen'])) {
+            session_start();
+            $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+            $wachtwoord = filter_input(INPUT_POST,'password');
+            $checkLoginning = checkLogin($username, $wachtwoord);
+            if ($checkLoginning == true) {
+                header('Location: /account');
+                $_SESSION['login'] = true;
+                $_SESSION['username'] = $checkLoginning->username;
+                $_SESSION['role'] = $checkLoginning->role;
+                
+            } else {
+                echo "Login failed";
+            }   
+        }
+        include_once "../Templates/inloggen.php";
+        break;
+        
+        */
+
+        
     case 'uitloggen':
         session_start();
         $titleSuffix = ' | Uitloggen';
         $_SESSION['login'] = false;
         if (isset($_POST['inloggen'])) {
-            $gebruikersnaam = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+            $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
-            $checkLoginning = checkLogin($gebruikersnaam, $wachtwoord);
+            $checkLoginning = checkLogin($username, $wachtwoord);
+
             if ($checkLoginning == true) {
-                header('Location: /account');
+                header ('Location: account', 'account');
                 $_SESSION['login'] = true;
-                $_SESSION['username'] = $gebruikersnaam;
+                $_SESSION['username'] = $username;
+                //header ('Location: /Templates/account.php', 'account');
                 $params = explode("/", "account");
                 $titleSuffix = ' | Account';
-                $contact = getContact();
-                //$review = getReview();
                 include_once "../Templates/account.php";
             } else {
                 echo "Login failed";
@@ -149,15 +120,31 @@ switch ($params[1]) {
         }
         include_once "../Templates/uitloggen.php";
         break;
+        /*
+        session_destroy();
+        $titleSuffix = ' | Uitloggen';
+        $_SESSION['login'] = false;
+        if (isset($_POST['inloggen'])) {
+            session_start();
+            $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+            $wachtwoord = $_POST['password'];
+            $checkLoginning = checkLogin($username, $wachtwoord);
+            if ($checkLoginning == true) {
+                header('Location: /account');
+                $_SESSION['login'] = true;
+                $_SESSION['username'] = $username;
+                $_SESSION['role'] = $checkLoginning->role;
+               
+            } else {
+                echo "Login failed";
+            }   
+        }
+        include_once "../Templates/uitloggen.php";
+        break;*/
     case 'registreren':
         session_start();
         $titleSuffix = ' | Registreren';
         include_once "../Templates/registreren.php";
-        break;
-    case 'admin':
-        session_start();
-        $titleSuffix = ' | Admin';
-        include_once "../Templates/admin/account.php";
         break;
     case 'contact':
         session_start();
@@ -166,10 +153,14 @@ switch ($params[1]) {
         include_once "../Templates/contact.php";
         break;
     case 'admin':
+        session_start();
         include_once ('admin.php');
         break;
     case 'account':
         session_start();
+        $_SESSION['login'] = true;
+        global $result;
+        var_dump($result);
         $username = $_SESSION['username'];
         $userid = getUserForReview($username);
         foreach($userid as &$data){
@@ -184,9 +175,8 @@ switch ($params[1]) {
         include_once "../Templates/account.php";
         break;
     default:
-    session_start();
         $titleSuffix = ' | Home';
-              
+        session_start(); 
         include_once "../Templates/home.php";
 
 

@@ -1,10 +1,8 @@
 <?php
 global $params;
 
-if (!isAdmin()) {
-    logout();
-    header ("Location:/home");
-} else {
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+    
     switch ($params[2]) {
         case 'home':
             include_once "../Templates/admin/home.php";
@@ -27,8 +25,13 @@ if (!isAdmin()) {
         case 'reviews':
             include_once "../Templates/admin/home.php";
             break;
+        case 'account':
+            include_once "../Templates/admin/account.php";
+            break;
         default:
             include_once "../Templates/admin/home.php";
             break;
-}
+        } 
+    } else {
+    include_once "../Templates/home.php";
 }

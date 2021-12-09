@@ -18,8 +18,8 @@
         <article class='inlogblok'>
             <form method='post'>
                 <h4>Inloggen HealthOne</h4>
-                <label for=''>Email</label><br>
-                <input type='text' name='email' required>
+                <label for=''>Username</label><br>
+                <input type='text' name='username' required>
                 <br>
                 <label for=''>Wachtwoord</label><br>
                 <input type='password' name='password' required><br><br>

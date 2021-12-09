@@ -1,6 +1,4 @@
-<?php
-
-    
+<?php 
     if ($_SESSION['login'] == true) {
         $params = explode("/", $request);
         $titleSuffix = ' | Account';

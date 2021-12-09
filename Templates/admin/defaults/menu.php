@@ -11,13 +11,13 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/home">home</a>
+                    <a class="nav-link active" href="admin/home">home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categories">sportapparaat</a>
+                    <a class="nav-link" href="admin/categories">sportapparaat</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact">contact</a>
+                    <a class="nav-link" href="admin/contact">contact</a>
                 </li>
             </ul>        
             <?php 
@@ -37,8 +37,8 @@
                 <div class='dropdown'>
                     <img src='" . $result['profile'] . "' style='width: 40%; border-radius: 30%;' alt=''>
                     <div class='dropdown-content'>
-                        <a href='/account'>Account</a>
-                        <a href='/password'>Wachtwoord aanpassen</a>
+                        <a href='admin/account'>Account</a>
+                        <a href='admin/password'>Wachtwoord aanpassen</a>
                         <a href='#'>Link 3</a>
                     </div>
                 </div>
