@@ -58,16 +58,29 @@ switch ($params[1]) {
             $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
             $checkLoginning = checkLogin($username, $wachtwoord);
+            checkRole($username, $wachtwoord);
             if ($checkLoginning == true) {
                 header ('Location: account', 'account');
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $username;
+                $_SESSION['password'] = $wachtwoord;
+                $_SESSION['role'] = $checkRole->role;
+                var_dump($_SESSION['role']);
                 $titleSuffix = ' | Account';
                 $contact = getContact();
                 //$review = getReview();
                 include_once "../Templates/account.php";
                 echo "de rol is niet bekend!";
-            } else {
+            } else if ($row['role'] == "admin") {
+                header('Location: /admin');
+                $_SESSION['login'] = true;
+                $_SESSION['username'] = $gebruikersnaam;
+                $titleSuffix = ' | Account';
+                $contact = getContact();
+                //$review = getReview();
+                include_once "../Templates/admin/account.php";
+            }
+            else {
                 echo "Login failed";
             }   
         }
@@ -105,20 +118,30 @@ switch ($params[1]) {
             $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
             $wachtwoord = $_POST['password'];
             $checkLoginning = checkLogin($username, $wachtwoord);
-
+            
             if ($checkLoginning == true) {
-                header ('Location: account', 'account');
+                header('Location: /account');
                 $_SESSION['login'] = true;
                 $_SESSION['username'] = $username;
-                //header ('Location: /Templates/account.php', 'account');
+                $_SESSION['password'] = $wachtwoord;
+                $_SESSION['role'] = $checkLoginning->role;
+                var_dump($_SESSION['role']);
                 $params = explode("/", "account");
                 $titleSuffix = ' | Account';
                 include_once "../Templates/account.php";
+            } else if ($row['role'] == "admin") {
+                header('Location: /admin');
+                $_SESSION['login'] = true;
+                $_SESSION['username'] = $gebruikersnaam;
+                $titleSuffix = ' | Account';
+                $contact = getContact();
+                //$review = getReview();
+                include_once "../Templates/admin/account.php";
             } else {
                 echo "Login failed";
             }   
         }
-        include_once "../Templates/uitloggen.php";
+        include_once "../Templates/uitloggen.php";  
         break;
         /*
         session_destroy();
@@ -159,9 +182,9 @@ switch ($params[1]) {
     case 'account':
         session_start();
         $_SESSION['login'] = true;
-        global $result;
-        var_dump($result);
         $username = $_SESSION['username'];
+        $wachtwoord = $_SESSION['password'];
+        checkRole($username, $wachtwoord);
         $userid = getUserForReview($username);
         foreach($userid as &$data){
             $personalReviews = getPersonalReviews($data->id);

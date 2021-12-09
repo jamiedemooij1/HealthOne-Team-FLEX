@@ -15,27 +15,13 @@ function checkLogin (string $username, string $password)
     function checkRole () 
     {
         global $pdo;
-        $query = $pdo->prepare("SELECT  role FROM customer WHERE username = :user");
-        $query->bindParam(":role", $role);
-        $query->execute();
-        $result = $query->fetchAll(PDO::FETCH_CLASS, 'User');
-        if (count($result) == 1) {
-            return true;
-        }
-        return false; 
-    }
-/*
-function checkLogin (string $username, string $password)
-{
-        global $pdo;
-        $sth = $pdo->prepare("SELECT username, role FROM customer WHERE username = ? AND password = ?");
+        $sth = $pdo->prepare("SELECT username, role FROM customer WHERE username = ? && password = ?");
         $sth->bindParam(1, $username);
         $sth->bindParam(2, $password);
-        $sth->setFetchMode(PDO::FETCH_CLASS, User::class);
-        
-        $sth->execute(); 
+        $sth->setFetchMode(PDO::FETCH_CLASS, User:: class);
+        $sth->execute();
         $user = $sth->fetch();
-        var_dump($user); 
-}*/
+        var_dump($user);
+    }
     ?>
 

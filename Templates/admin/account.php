@@ -4,6 +4,7 @@ function startSession() {
         session_start();
     }
 }
+    var_dump($_SESSION['role']);
     global $gebruikersnaam;
             
 ?>  
