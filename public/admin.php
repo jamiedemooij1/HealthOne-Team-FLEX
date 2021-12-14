@@ -19,7 +19,12 @@ else {
                     $productId = $params[3];
                     $delete = $params[4];
                     if ($delete) {
-                        deleteProduct($productId);
+                        $count = deleteProduct($productId);
+                        if ($count === 1) {
+
+                        } else {
+                            
+                        }
                     }
                 }
                 $product = getAllProducts();    

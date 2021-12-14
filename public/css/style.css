@@ -88,6 +88,10 @@ body {
 .breadcrumb-item {
     padding-left: 0.5vw;
 }
+.btn {
+    width: 40%;
+    height: 50%;
+}
 .button {
     margin-right: 3vw;
     padding-right: 4vw; 
