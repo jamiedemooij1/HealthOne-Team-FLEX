@@ -4,8 +4,8 @@ class User
 {
     public $id;
     public $username;
-    public $role;
     public $password;
+    public $role;
     public $subscribtion;
     public $firstname;
     public $lastname;

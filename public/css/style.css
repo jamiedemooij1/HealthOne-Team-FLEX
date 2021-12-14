@@ -164,6 +164,10 @@ footer h3, a {
 .hours {
     margin: 0vw;
 }
+.iconify {
+    width: 5%;
+    height: 5%;
+}
 .id-number {
     margin-right: 3vw;
 }

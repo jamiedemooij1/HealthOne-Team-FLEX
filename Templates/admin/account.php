@@ -14,6 +14,8 @@ function startSession() {
 
     <?php
     include_once('defaults/head.php');
+    include_once('defaults/header.php');
+
     ?>
     <body>
         <div class="container-fluid">

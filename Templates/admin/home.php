@@ -8,7 +8,7 @@
         <div class="container-fluid">
                 <?php
                 include_once ('defaults/header.php');
-                include_once ('defaults/menu.php');
+                include_once('defaults/menu.php');
                 include_once ('defaults/pictures.php');
                 ?>
                 <div class="row">

@@ -9,6 +9,7 @@
 <html>
 <?php
 include_once('defaults/head.php');
+include_once('defaults/header.php');
 ?>
 
 <body>
