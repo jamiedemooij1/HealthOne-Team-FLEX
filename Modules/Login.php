@@ -1,18 +1,4 @@
 <?php 
-
-    /*function checkLogin (string $username, string $password)
-    {
-            global $pdo;
-            $query = $pdo->prepare("SELECT username, role FROM customer WHERE username = :username AND password =:password");
-            $query->bindParam(1, $username);
-            $query->bindParam(2, $password);
-            $query->execute(); 
-            $result = $query->fetchAll(PDO::FETCH_CLASS, 'User');
-            if (count($result) == 1) {
-                return true;
-            }
-            return false;        
-    }*/
     function checkAdmin():string {
         global $pdo;
         $username = filter_input(INPUT_POST, 'username');

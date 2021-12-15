@@ -5,8 +5,9 @@ require '../Modules/Contact.php';
 require '../Modules/Database.php';
 require '../Modules/Reviews.php';
 require '../Modules/Login.php';
+require '../Modules/View.php';
 session_start();
-
+$getMenus = getMenu();
 define("DOC_ROOT", realpath(dirname(__DIR__)));
 define("TEMPLATE_ROOT", realpath(DOC_ROOT . "/Templates"));
 
@@ -18,6 +19,7 @@ $titleSuffix = "";
 switch ($params[1]) {
     case 'categories':
         $titleSuffix = ' | Categories';
+        
         
         if (isset($_GET['category_id'])) {
             $categoryId = $_GET['category_id'];
@@ -64,6 +66,10 @@ switch ($params[1]) {
                 case 'ADMIN':
                     $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
                     $wachtwoord = $_POST['password'];
+                    $_SESSION['login'] = true;
+                    $_SESSION['username'] = $username;
+                    $_SESSION['password'] = $wachtwoord;
+                    $_SESSION['role'] = $checkRole->role;
                     header('Location: /admin/home');
 
                 break;
@@ -141,7 +147,9 @@ switch ($params[1]) {
         $contact = getContact();
         include_once "../Templates/contact.php";
         break;
-    case 'admin':      
+    case 'admin':  
+        $_SESSION['login'] = true;  
+        $getMenu = getAdminMenu();  
         include_once ('admin.php');
         break;
     case 'account':

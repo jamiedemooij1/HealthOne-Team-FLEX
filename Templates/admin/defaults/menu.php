@@ -14,36 +14,53 @@
                     <a class="nav-link active" href="/admin/home">home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/products">product overview</a>
+                    <a class="nav-link active" href="/admin/categories">categorieën</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/productview">product overview</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin/contact">contact</a>
                 </li>
             </ul>        
             <?php 
-            
-                $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-                $query = $db->prepare("SELECT profile FROM customer WHERE username = :username");
-                $query->bindParam('username', $_SESSION['username']);
-                $query->execute();
-                $result = $query->fetch();
-                
-                echo "
-                <ul class='navbar-nav ms-auto menu-box'>
-                <li class='nav-item'>
-                <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>
-                </li>
-                <li class='nav-item profile'>
-                <div class='dropdown'>
-                    <img src='" . $result['profile'] . "' style='width: 40%; border-radius: 30%;' alt=''>
-                    <div class='dropdown-content'>
-                        <a href='/admin/account'>Account</a>
-                        <a href='/admin/password'>Wachtwoord aanpassen</a>
-                        <a href='#'>Link 3</a>
-                    </div>
-                </div>
-                </li>
-                ";
+                if ($_SESSION['login'] == true) {
+                    
+                    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+                    $query = $db->prepare("SELECT profile FROM customer WHERE username = :username");
+                    $query->bindParam('username', $_SESSION['username']);
+                    $query->execute();
+                    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                    foreach($result as &$data) {
+                        echo "
+                        <ul class='navbar-nav ms-auto menu-box'>
+                        <li class='nav-item'>
+                        <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>
+                        </li>
+                        <li class='nav-item profile'>
+                        <div class='dropdown'>
+                            <img src='" . $data['profile'] . "' style='width: 40%; border-radius: 30%;' alt=''>
+                            <div class='dropdown-content'>
+                                <a href='/admin/account'>Account</a>
+                                <a href='/admin/password'>Wachtwoord aanpassen</a>
+                                <a href='#'>Link 3</a>
+                            </div>
+                        </div>
+                        </li>
+                        ";
+                    }
+                } else {
+                    echo 
+                    "<ul class='navbar-nav ms-auto'>
+                        <li class='nav-item'>
+                            <a class='nav-link'  href='/registreren'>aanmelden</a>
+                        </li>
+                        <li class='nav-item'>
+                    <a class='nav-link' href= /inloggen>inloggen</a> 
+                    </li>";
+                }
+                    //  var_dump($result);
+                    //var_dump($_SESSION['username']);
                 
                     
                  

@@ -3,6 +3,7 @@ RewriteRule ^categories/([0-9]+)/?$ /public/index.php?category_id=$1    [NC,L]  
 RewriteRule ^categories/([0-9]+)/product/([0-9]+)?$ /public/index.php?category_id=$1&product_id=$2    [NC,L]    # Handle product requests
 RewriteRule ^categories/([0-9]+)/registreren/([0-9]+)?$ /public/index.php?category_id=$1&registreren=$3    [NC,L]    # Handle product requests
 RewriteRule ^admin/product/([0-9]+)/delete/$ /public/index.php?product_id=$1&delete=true    [NC,L]    # Handle product requests
+RewriteRule ^admin/product/add/$ /public/index.php?product_id=$1&delete=true    [NC,L]    # Handle product requests
 
 
 

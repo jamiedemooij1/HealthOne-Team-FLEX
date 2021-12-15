@@ -233,6 +233,10 @@ main {
 .product-heading {
     text-align: center;
 }
+.product-view {
+    width: 20%;
+    height: 20%;
+}
 .profile {
     padding: 0px;
     margin: 0px;
