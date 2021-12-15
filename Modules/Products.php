@@ -40,23 +40,17 @@ function deleteProduct(int $id) {
     $sth->execute();
     return $sth->rowCount();
 }
-function addProduct() {
-    $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-    if (isset($_POST["adding"])) {
-        $name = FILTER_INPUT(INPUT_POST, 'name');
-        $image = FILTER_INPUT(INPUT_POST, 'picture');
-        $category = FILTER_INPUT(INPUT_POST, 'category');
-        $description = FILTER_INPUT(INPUT_POST, 'description');
-        $sth = $db->prepare('INSERT INTO product (Name, Picture, Description, Category_id) 
-                                        VALUES(:Name, :Picture, :Description, :Category_id)');
-        $sth->bindParam("Name", $name);
-        $sth->bindParam("Picture", $image);
-        $sth->bindParam("Description", $description);
-        $sth->bindParam("Category_id", $category);
-        $sth->execute();
-        return $sth->rowCount();
-    }
-    
+function addProduct(string $id, string $image, string $description, string $category) {
+    global $pdo;
+    $sth = $pdo->prepare('INSERT INTO product (ID, Name, Picture, Description, Category_id) 
+    VALUES(:ID, :Name, :Picture, :Description, :Category_id)');
+    $sth->bindParam("ID", $id);      
+    $sth->bindParam("Name", $name);
+    $sth->bindParam("Picture", $image);
+    $sth->bindParam("Description", $description);
+    $sth->bindParam("Category_id", $category);
+    $sth->execute();
+    var_dump($id);
 }
 function menuCategory() {
     global $pdo;
@@ -66,33 +60,5 @@ function menuCategory() {
     $result = $query->fetchAll(PDO::FETCH_CLASS);
     return $result;
 }
-/*$db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
-        if (isset($_POST["registreren"])) {
-            
-            $gebruikersnaam = $_POST["username"];
-            $wachtwoord = $_POST["password"];
-            $EncryptPassword = md5($wachtwoord); 
-            $voornaam = $_POST["firstname"];
-            $achternaam = $_POST["lastname"];
-            $telefoonnummer = $_POST["phonenumber"];
-            $geslacht = $_POST["gender"];
-            $emailadres = $_POST["mailaddress"];   
-            $abonnement = $_POST["subscription"];                           
-            
-            $query= $db->prepare("INSERT INTO customer(username, password, firstname, lastname, phonenumber, gender, mailaddress, subscription) 
-                                VALUES (:username, :password, :firstname, :lastname, :phonenumber, :gender, :mailaddress, :subscription)");    
-            $query->bindParam("username", $gebruikersnaam);
-            $query->bindValue("password", $wachtwoord);
-            $query->bindParam("firstname", $voornaam);
-            $query->bindParam("lastname", $achternaam);
-            $query->bindParam("phonenumber", $telefoonnummer);
-            $query->bindParam("gender", $geslacht);
-            $query->bindParam("mailaddress", $emailadres);
-            $query->bindParam("subscription", $abonnement);
-            if ($query->execute()) {
-                echo "
-                <p class='registration'>Gefeliciteerd! Uw inschrijving is gelukt!</p>";
-            } else {
-                echo "De inschrijving is nog niet gelukt, controleer alleen velden.";
-            }
-        } */
+
+?>

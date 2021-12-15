@@ -6,6 +6,7 @@ require '../Modules/Database.php';
 require '../Modules/Reviews.php';
 require '../Modules/Login.php';
 require '../Modules/View.php';
+require '../Modules/Fileupload.php';
 session_start();
 $getMenus = getMenu();
 define("DOC_ROOT", realpath(dirname(__DIR__)));

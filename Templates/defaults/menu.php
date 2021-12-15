@@ -20,9 +20,6 @@
                     <a class="nav-link" href="/contact">contact</a>
                 </li>
             </ul>
-            
-                
-                    
                     <?php 
                     
                         if ($_SESSION['login'] == true) {

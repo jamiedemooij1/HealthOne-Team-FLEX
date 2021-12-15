@@ -38,12 +38,34 @@ else {
                        }
                     } 
                 }
+                
                 $product = getAllProducts();    
                 include_once "../Templates/admin/productview.php";
                 break;
             case 'contact':
                 $contact = getContact();
                 include_once "../Templates/admin/contact.php";
+                break;
+            case 'addproduct':
+                $categories = getCategories();
+                if (isset($_POST["adding"])) {
+                    $name = FILTER_INPUT(INPUT_POST, 'name');
+                    $image = FILTER_INPUT(INPUT_POST, 'img');
+                    $category = FILTER_INPUT(INPUT_POST, 'category');
+                    $description = FILTER_INPUT(INPUT_POST, 'description');
+                    var_dump($name);
+                    $path = fileupload("img");
+                    if ($path === false) {
+                        echo "Incorrect image";
+                        echo "Try again";
+                    } else {
+                        addProduct($name, $path, $description, $category);
+                        
+                        echo "File upload successed";
+                    }
+                }
+                
+                include_once "../Templates/admin/addproduct.php";
                 break;
             case 'categories':
                 $titleSuffix = ' | Categories';
