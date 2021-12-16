@@ -50,6 +50,15 @@ a {
 .account-info {
     margin-left: 5vw;
 }
+.addForm {
+    position: absolute;
+    left: 40%;
+}
+.addLabel {
+    font-weight: bold;
+    position: absolute;
+    left: 35%;
+}
 .article-one {
     background-color: rgb(184, 184, 184);
     text-align: center;
