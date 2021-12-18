@@ -269,6 +269,9 @@ main {
     padding-left: 3vw;
     height: 40vw;
 }  
+.profilePicture {
+    width: 40%;
+}
 .pull-right img-thumbnail {
     margin-top: -10px;
     margin-bottom: 10px

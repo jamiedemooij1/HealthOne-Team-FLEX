@@ -30,7 +30,7 @@
                             $result = $query->fetchAll(PDO::FETCH_ASSOC);
                             foreach($result as &$data) {
                             echo "
-                            <ul class='navbar-nav ms-auto menu-box'>
+                            <ul class='navbar-nav ms-auto menu-box dropbox'>
                             <li class='nav-item'>
                             <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>
                             </li>

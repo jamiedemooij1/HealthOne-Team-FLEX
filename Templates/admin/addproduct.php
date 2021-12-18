@@ -1,4 +1,9 @@
 <html>
+<head>
+  <style>
+
+  </style>
+</head>
 <?php
 include_once('defaults/head.php');
 ?>
