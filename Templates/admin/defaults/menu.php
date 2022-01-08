@@ -30,24 +30,26 @@
                     $query = $db->prepare("SELECT profile FROM customer WHERE username = :username");
                     $query->bindParam('username', $_SESSION['username']);
                     $query->execute();
-                    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-                    foreach($result as &$data) {
-                        echo "
-                        <ul class='navbar-nav ms-auto menu-box dropbox'>
-                        <li class='nav-item'>
-                        <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>
-                        </li>
-                        <li class='nav-item profile'>
-                        <div class='dropdown'>
-                            <img src='" . $data['profile'] . "' class='profilePicture' style='border-radius: 30%;' alt=''>
-                            <div class='dropdown-content'>
-                                <a href='/admin/account'>Account</a>
-                                <a href='/admin/password'>Wachtwoord aanpassen</a>
-                                <a href='#'>Link 3</a>
+                    if ($query->rowCount() == 1) {
+                    $result = $query->fetch(PDO::FETCH_ASSOC);
+                        foreach($result as &$data) {
+                            echo "
+                            <ul class='navbar-nav ms-auto menu-box dropbox'>
+                            <li class='nav-item'>
+                            <a class='nav-link' href= /uitloggen><input class='logout' type='submit' name='uitloggen' value='uitloggen'></a>
+                            </li>
+                            <li class='nav-item profile'>
+                            <div class='dropdown'>
+                                <img src='" . $data['profile'] . "' class='profilePicture' style='border-radius: 30%;' alt=''>
+                                <div class='dropdown-content'>
+                                    <a href='/admin/account'>Account</a>
+                                    <a href='/admin/password'>Wachtwoord aanpassen</a>
+                                    <a href='#'>Link 3</a>
+                                </div>
                             </div>
-                        </div>
-                        </li>
-                        ";
+                            </li>
+                            ";
+                        }
                     }
                 } else {
                     echo 
