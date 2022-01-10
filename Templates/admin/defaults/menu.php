@@ -31,7 +31,7 @@
                     $query->bindParam('username', $_SESSION['username']);
                     $query->execute();
                     if ($query->rowCount() == 1) {
-                    $result = $query->fetch(PDO::FETCH_ASSOC);
+                    $result = $query->fetchAll(PDO::FETCH_ASSOC);
                         foreach($result as &$data) {
                             echo "
                             <ul class='navbar-nav ms-auto menu-box dropbox'>

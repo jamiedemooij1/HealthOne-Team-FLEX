@@ -111,11 +111,16 @@ switch ($params[1]) {
             
             $result = checkAdmin();
             switch ($result) {
-                case 'admin':
-                    header('Location: /admin/home.php');
+                case 'ADMIN':
+                    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+                    $wachtwoord = $_POST['password'];
+                    $_SESSION['login'] = true;
+                    $_SESSION['username'] = $username;
+                    $_SESSION['password'] = $wachtwoord;
+                    $_SESSION['role'] = $checkRole->role;
                     include_once "../Templates/admin/home.php";
                 break;
-                case 'user':
+                case 'USER':
                     var_dump($result);
                     header('Location: /account');
                     $_SESSION['login'] = true;
@@ -124,12 +129,12 @@ switch ($params[1]) {
                     $_SESSION['role'] = $checkRole->role;
                     include_once "../Templates/account.php";
                 break;
-                case 'failure':
+                case 'FAILURE':
                     $message = "Gebruikersnaam of wachtwoord is niet correct ingevuld!";
                     include_once("../Templates/inloggen.php");
                     
                 break;
-                case 'incomplete':
+                case 'INCOMPLETE':
                     $message = "Niet alle velden zijn ingevuld!";
                     include_once("../Templates/inloggen.php");
                     
