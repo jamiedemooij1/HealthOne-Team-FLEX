@@ -68,6 +68,28 @@ else {
                 
                 include_once "../Templates/admin/addproduct.php";
                 break;
+            case 'updateproduct':
+                $categories = getCategories();
+                if (isset($_POST["update"])) {
+                    $id = FILTER_INPUT(INPUT_POST, 'id');
+                    $name = FILTER_INPUT(INPUT_POST, 'name');
+                    $image = FILTER_INPUT(INPUT_POST, 'img');
+                    $category = FILTER_INPUT(INPUT_POST, 'category');
+                    $description = FILTER_INPUT(INPUT_POST, 'description');
+                    var_dump($name);
+                    $path = fileupload("img");
+                    if ($path === false) {
+                        echo "Incorrect image";
+                        echo "Try again";
+                    } else {
+                        addProduct($id, $name, $path, $description, $category);
+                        
+                        echo "File upload successed";
+                    }
+                }
+                
+                include_once "../Templates/admin/updateproduct.php";
+                break;
             case 'categories':
                 $titleSuffix = ' | Categories';
         

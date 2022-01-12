@@ -50,8 +50,8 @@ function addProduct(string $id, string $name, string $image, string $description
     $sth->bindParam("Description", $description);
     $sth->bindParam("Category_id", $category);
     $sth->execute();
-    var_dump($id);
 }
+
 function menuCategory() {
     global $pdo;
     $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");

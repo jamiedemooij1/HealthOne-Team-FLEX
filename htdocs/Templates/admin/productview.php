@@ -22,7 +22,7 @@ include_once('defaults/head.php');
     <tr>
       <th scope="col">Product ID</th>
       <th scope="col">Afbeelding</th>
-      <th scope="col">Naam</th>
+      <th scope="col">Naam</th>  
       <th scope="col">Categorie</th>
       <th scope="col">Delete</th>
       <th>Extra</th>

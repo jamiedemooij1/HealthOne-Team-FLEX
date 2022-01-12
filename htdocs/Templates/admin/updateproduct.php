@@ -25,16 +25,16 @@ include_once('defaults/head.php');
     <form method="post" enctype="multipart/form-data">
     <tr>
       <td><label for=""  class="addLabel">ID </label>
-      <input type="number" name="idU" min=9 class="addForm"></td><br><br>
+      <input type="number" name="idU" min=9 class="addForm" value="<?php echo $id; ?>"></td><br><br>
       <td><label for="" class="addLabel"> Afbeelding </label>
-      <input type="file" name="imgU" class="addForm"></td><br><br>
+      <input type="text" name="imgU" class="addForm" value="<?php echo $image; ?>"></td><br><br>
       <td><label for="" class="addLabel"> Naam </label>
-      <input type="text" name="nameU" class="addForm"></td><br><br>
+      <input type="text" name="nameU" class="addForm" value="<?php echo $name; ?>"></td><br><br>
       <td><label for="" class="addLabel"> Beschrijving</label>
       <input type="text" name="descriptionU" class="addForm"></td><br><br>
       <td><label for="" class="addLabel"> Categorie ID</label>
       <input type="number" min=1 max=4 name="category" class="addForm" ><br><br>
-      <td><a href="/admin/productview/add"><input type="submit" value="Opslaan" name="adding" class="addForm"></a></td>
+      <td><a href="/admin/productview/add"><input type="submit" value="Opslaan" name="update" class="addForm"></a></td>
     </tr>
     </form>
 
