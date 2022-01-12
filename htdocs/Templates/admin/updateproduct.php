@@ -21,7 +21,43 @@ include_once('defaults/head.php');
           <li class="breadcrumb-item"><a href="/categories">Product overview</a></li>
       </ol>
   </nav>
-  
+  <?php
+    if (isset($_POST["update"])) {
+      $id = FILTER_INPUT(INPUT_POST, 'id');
+      $name = FILTER_INPUT(INPUT_POST, 'name');
+      $image = FILTER_INPUT(INPUT_POST, 'img');
+      $category = FILTER_INPUT(INPUT_POST, 'category');
+      $description = FILTER_INPUT(INPUT_POST, 'description');
+      var_dump($name);
+      $path = fileupload("img");
+      if ($path === false) {
+          echo "Incorrect image";
+          echo "Try again";
+      } else {
+          addProduct($id, $name, $path, $description, $category);
+          
+          echo "File upload successed";
+      }
+  }
+      $pdo = new PDO("mysql:host=localhost;dbname=fietsenmaker", "root", "");
+      $sth = $pdo->prepare('UPDATE product SET nameU = :Name,
+                                               imgU = :Picture,
+                                               descriptionU = :Description, 
+                                               Category_i = :Category_id
+                                  WHERE id = :id');
+           
+      $sth->bindParam("Name", $name);
+      $sth->bindParam("Picture", $image);
+      $sth->bindParam("Description", $description);
+      $sth->bindParam("Category_id", $category);
+      $sth->bindParam("ID", $_GET['id']); 
+      if ($sth->execute()) {
+          echo "Het product is geupdate";
+      }   else {
+          echo "Er is een fout opgetreden";
+      }
+  }
+  ?>
     <form method="post" enctype="multipart/form-data">
     <tr>
       <td><label for=""  class="addLabel">ID </label>
