@@ -40,9 +40,9 @@ function deleteProduct(int $id) {
     $sth->execute();
     return $sth->rowCount();
 }
-function addProduct(string $id, string $image, string $description, string $category) {
+function addProduct(string $id, string $name, string $image, string $description, string $category) {
     global $pdo;
-    $sth = $pdo->prepare('INSERT INTO product (ID, Name, Picture, Description, Category_id) 
+    $sth = $pdo->prepare('INSERT INTO product (id, name, Picture, description, Category_id) 
     VALUES(:ID, :Name, :Picture, :Description, :Category_id)');
     $sth->bindParam("ID", $id);      
     $sth->bindParam("Name", $name);
@@ -50,7 +50,6 @@ function addProduct(string $id, string $image, string $description, string $cate
     $sth->bindParam("Description", $description);
     $sth->bindParam("Category_id", $category);
     $sth->execute();
-    var_dump($id);
 }
 function menuCategory() {
     global $pdo;

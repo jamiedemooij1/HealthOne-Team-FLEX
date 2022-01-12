@@ -49,6 +49,7 @@ else {
             case 'addproduct':
                 $categories = getCategories();
                 if (isset($_POST["adding"])) {
+                    $id = FILTER_INPUT(INPUT_POST, 'id');
                     $name = FILTER_INPUT(INPUT_POST, 'name');
                     $image = FILTER_INPUT(INPUT_POST, 'img');
                     $category = FILTER_INPUT(INPUT_POST, 'category');
@@ -59,7 +60,7 @@ else {
                         echo "Incorrect image";
                         echo "Try again";
                     } else {
-                        addProduct($name, $path, $description, $category);
+                        addProduct($id, $name, $path, $description, $category);
                         
                         echo "File upload successed";
                     }
