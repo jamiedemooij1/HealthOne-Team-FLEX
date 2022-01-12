@@ -1,7 +1,7 @@
 
 <h4 class="article-head">Review plaatsen</h4>
-<article class="article-four">
-    <form method="post" action="#" class="reviewPost">
+<article class="article-four reviewPost">
+    <form method="post" action="#">
         <label><b>Titel</b></label>
         <input type="text" name="title" class="input-one">
         <br>

@@ -5,7 +5,7 @@
     include_once('defaults/head.php');
     ?>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid home-page">
                 <?php
                 include_once ('defaults/header.php');
                 include_once ('defaults/menu.php');
@@ -41,12 +41,13 @@
                     }
                     ?>
                 </div>
+            </div>
                 <hr>
                 <?php
                 include_once ('defaults/footer.php');
                 ?>
 
-        </div>
+        
         <script src="/public/js/action.js"></script>
 
     </body>
