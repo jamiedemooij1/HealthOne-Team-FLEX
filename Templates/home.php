@@ -28,6 +28,17 @@
                         catch (PDOException $e) {
                             die("Error! : " . $e->getMessage());
                         }
+
+
+                    global $newsblog;
+                    echo "<div class='flex-column home-info newsblog'>";
+                    echo "<h3>Nieuwsblog</h3>";
+                    foreach ($newsblog as &$data) {
+                        echo "<div>";
+                        echo "<p> -$data->title </p>";
+                        echo "<p>$data->date</p>";
+                        echo "</div>";
+                    }
                     ?>
                 </div>
                 <hr>

@@ -43,7 +43,7 @@ include_once('defaults/head.php');
             global $reviews;
             foreach($reviews as &$data){
                 echo "
-            <h4 class='article-head'>Mijn reviews</h4>
+            <h4 class='article-head'>Product reviews</h4>
                 <article class='article-one'>
                     <h5><b>$data->title</b></h5>
                     <p>$data->description
@@ -53,9 +53,14 @@ include_once('defaults/head.php');
             ";
             }
         }
+
         ?>
-    </div>
-    <hr>
+        <?php
+        if($_SESSION['login'] == true){
+            include_once('defaults/postreview.php');
+        }
+        ?>
+        ?>
     <?php
     include_once('defaults/footer.php');
 

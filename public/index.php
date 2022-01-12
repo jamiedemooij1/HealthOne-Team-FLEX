@@ -7,6 +7,7 @@ require '../Modules/Reviews.php';
 require '../Modules/Login.php';
 require '../Modules/View.php';
 require '../Modules/Fileupload.php';
+require '../Modules/Newsblog.php';
 session_start();
 $getMenus = getMenu();
 define("DOC_ROOT", realpath(dirname(__DIR__)));
@@ -37,7 +38,6 @@ switch ($params[1]) {
                 }
                 $productpage = getProductInformation($productId);
                 include_once "../Templates/product.php";
-                $review = getReview();
                 
                 // TODO Zorg dat je hier de product pagina laat zien
             } else {
@@ -176,6 +176,7 @@ switch ($params[1]) {
         break;
     default:
         $titleSuffix = ' | Home';
+        $newsblog = getNewsblog();
         include_once "../Templates/home.php";
 
 
