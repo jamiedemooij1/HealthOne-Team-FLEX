@@ -263,7 +263,7 @@ main {
     height: 30vh;
 }
 .product-information {
-    height: 40vw;
+    height: 80vw;
 }   
 .products-information {
     padding-left: 3vw;
@@ -288,6 +288,9 @@ main {
     padding-top: 1vw;
     padding-right: 2vw;
     padding-bottom: 1vw;
+}
+.reviewPost {
+    height: 30vh;
 }
 .row:after {
     content: "";

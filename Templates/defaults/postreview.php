@@ -1,7 +1,7 @@
-</div>
+
 <h4 class="article-head">Review plaatsen</h4>
 <article class="article-four">
-    <form method="post" action="#">
+    <form method="post" action="#" class="reviewPost">
         <label><b>Titel</b></label>
         <input type="text" name="title" class="input-one">
         <br>
@@ -20,7 +20,7 @@
         <br>
         <input type="submit" name="send" value="Verzenden">
     </form>
-    <hr>
+</article>
     <?php
     include_once ('review.php');
 ?>

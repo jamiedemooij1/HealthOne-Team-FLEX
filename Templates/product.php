@@ -60,12 +60,12 @@ include_once('defaults/head.php');
             include_once('defaults/postreview.php');
         }
         ?>
-        ?>
+        </div>
     <?php
     include_once('defaults/footer.php');
 
     ?>
-</div>
+
 <script src="/public/js/action.js"></script>
 
 </body>
