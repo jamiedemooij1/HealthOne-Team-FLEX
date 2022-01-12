@@ -1,13 +1,16 @@
 <?php 
     try {
         $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
+        global $userid;
+        global $productId;
         if (isset($_POST["send"])) {
-            
-            $customer_id = $_POST["id"];
+            foreach($userid as &$data){
+                $customer_id = $data->id;
+            }
             $titel = $_POST["title"];
             $description = $_POST["description"];
             $rating = $_POST["rating"];
-            $product_id =
+            $product_id = $productId;
             
             $query= $db->prepare("INSERT INTO review(customer_id, title, description, rating, product_id) 
                                 VALUES (:customer_id, :title, :description, :rating, :product_id)");

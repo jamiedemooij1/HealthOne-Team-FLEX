@@ -33,6 +33,8 @@ switch ($params[1]) {
                 $product = getProductInformation($productId);
                 $titleSuffix = ' | ' . $product[0]->Name;
                 $reviews=getReview($productId);
+                $username = $_SESSION['username'];
+                $userid = getUserForReview($username);
                 if(isset($_POST['name']) && isset($_POST['review'])) {
                     saveReview($_POST['name'],$_POST['review']);
                 }

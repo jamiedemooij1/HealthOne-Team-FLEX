@@ -2,10 +2,6 @@
 <h4 class="article-head">Review plaatsen</h4>
 <article class="article-four">
     <form method="post" action="#">
-        <label><b>Uw naam</b> </label>
-        <input type="text" name="naam" class="input-one">
-        <br>
-        <br>
         <label><b>Titel</b></label>
         <input type="text" name="title" class="input-one">
         <br>
@@ -25,3 +21,7 @@
         <input type="submit" name="send" value="Verzenden">
     </form>
     <hr>
+    <?php
+    include_once ('review.php');
+?>
+
