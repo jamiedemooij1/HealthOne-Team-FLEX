@@ -171,6 +171,9 @@ footer h3, a {
 .header-row {
     margin-top: 20px
 }
+.home {
+    height: 45%;
+}
 .home-info {
     font-size: 1.2em;
 }
@@ -224,7 +227,10 @@ main {
 .menu {
     float: right;
 }
-
+.news {
+    float: right;
+    margin-right: 3vh;
+}
 .nav-link {
     color: black;
 }

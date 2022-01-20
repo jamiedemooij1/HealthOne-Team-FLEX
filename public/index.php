@@ -12,7 +12,6 @@ session_start();
 $getMenus = getMenu();
 define("DOC_ROOT", realpath(dirname(__DIR__)));
 define("TEMPLATE_ROOT", realpath(DOC_ROOT . "/Templates"));
-
 $request = $_SERVER['REQUEST_URI'];
 $params = explode("/", $request);
 $title = "HealthOne";
@@ -21,8 +20,6 @@ $titleSuffix = "";
 switch ($params[1]) {
     case 'categories':
         $titleSuffix = ' | Categories';
-        
-        
         if (isset($_GET['category_id'])) {
             $categoryId = $_GET['category_id'];
             $products = getProducts($categoryId);

@@ -22,7 +22,7 @@
             </ul>
                     <?php 
                     
-                        if ($_SESSION['login'] == true) {
+                        if ($_SESSION['username']) {
                             $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
                             $query = $db->prepare("SELECT profile, info FROM customer WHERE username = :username");
                             $query->bindParam('username', $_SESSION['username']);

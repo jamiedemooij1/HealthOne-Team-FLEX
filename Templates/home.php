@@ -5,13 +5,13 @@
     include_once('defaults/head.php');
     ?>
     <body>
-        <div class="container-fluid home-page">
+        <div class="container-fluid home-page ">
                 <?php
                 include_once ('defaults/header.php');
                 include_once ('defaults/menu.php');
                 include_once ('defaults/pictures.php');
                 ?>
-                <div class="row">
+                <div class="row home">
                     <?php
                     try {
                             $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
@@ -35,11 +35,12 @@
                     echo "<h3>Nieuwsblog</h3>";
                     foreach ($newsblog as &$data) {
                         echo "<div>";
-                        echo "<p> -$data->title </p>";
-                        echo "<p>$data->date</p>";
+                        echo "<p>- $data->title:<i class='news'> $data->date </i></p>";
+                        //echo "<p> $data->date</p>";
                         echo "</div>";
                     }
                     ?>
+                    <br><br>
                 </div>
             </div>
                 <hr>
