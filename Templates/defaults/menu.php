@@ -22,7 +22,7 @@
             </ul>
                     <?php 
                     
-                        if ($_SESSION['username']) {
+                        if ($_SESSION['login'] == true) {
                             $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
                             $query = $db->prepare("SELECT profile, info FROM customer WHERE username = :username");
                             $query->bindParam('username', $_SESSION['username']);
@@ -39,7 +39,7 @@
                                 <img src='" . $data['profile'] . "' style='width: 40%; border-radius: 30%;' alt=''>
                                 <div class='dropdown-content'>
                                     <a href='/account'>Account</a>
-                                    <a href='/password'>Wachtwoord aanpassen</a>
+                                    <a href='/change'>Wachtwoord aanpassen</a>
                                     <a href='#'>Link 3</a>
                                 </div>
                             </div>

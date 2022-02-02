@@ -147,6 +147,10 @@ switch ($params[1]) {
         $titleSuffix = ' | Registreren';
         include_once "../Templates/registreren.php";
         break;
+    case 'change':
+    $titleSuffix = ' | Registreren';
+    include_once "../Templates/change.php";
+    break;
     case 'contact':
         $titleSuffix = ' | Contact';
         $contact = getContact();

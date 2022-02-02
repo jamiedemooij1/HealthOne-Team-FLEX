@@ -52,12 +52,17 @@
                     </article>
                 </div>
                 <div class="column">
-                <?php
-                        if ($_SESSION['login'] == true) {
-                        include_once ('defaults/user.php');
-                    }
-                    
-                ?>                    
+                    <?php
+                            if ($_SESSION['login'] == true) {
+                            include_once ('defaults/user.php');
+                        }
+                        
+                    ?> 
+                <a href="/change">
+                    <input type="submit" name="veranderProfiel" value="wijzig uw profiel">
+                </a>
+                
+                                   
                 </div>
                 <hr>
             </div>

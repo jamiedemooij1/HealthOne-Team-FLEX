@@ -1,5 +1,5 @@
 <?php
-    if ($_SESSION['username']) {
+    if ($_SESSION['login'] == true) {
         $params = explode("/", $request);
         $titleSuffix = ' | Account';
         $contact = getContact();
