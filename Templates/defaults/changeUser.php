@@ -4,10 +4,10 @@
         
         $db = new PDO("mysql:host=localhost;dbname=healthone", "root", "");
         if (isset($_POST['verander'])) {
-            $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
-            $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING);
-            $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_STRING);
-            $lastname = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_STRING);
+            $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_STRING, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_STRING, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $lastname = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_STRING, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $query = $db->prepare("UPDATE customer SET username = :username,
                                                        password = :password,
                                                        firstname =:firstname,
